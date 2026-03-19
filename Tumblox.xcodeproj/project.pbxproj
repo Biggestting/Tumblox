@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 63;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -78,7 +78,7 @@
 		57F13F1F2312F32164D24DAF /* ChallengeLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeLevel.swift; sourceTree = "<group>"; };
 		594ED69CD90B74212DC614F8 /* GameEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEngine.swift; sourceTree = "<group>"; };
 		59FC32C5E5CF5AC7EE12DDA3 /* TutorialSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialSheet.swift; sourceTree = "<group>"; };
-		5C9969D084B28F426FFCAF55 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		5C9969D084B28F426FFCAF55 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		6F705562370EF15FFA6BF57D /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		74A7E807DC3357EB536DEE1A /* ModeSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeSelectView.swift; sourceTree = "<group>"; };
 		7AB781EEFAFFA40361DD7F9D /* HapticService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticService.swift; sourceTree = "<group>"; };
@@ -90,7 +90,7 @@
 		A721CD93E027421BB3DF30FD /* GameConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameConfig.swift; sourceTree = "<group>"; };
 		AAE099B27BCEDD6A9CBC315C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		B84BB6B87BB5948A1C57578E /* PaceSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaceSection.swift; sourceTree = "<group>"; };
-		BD62CE72041D375B3A0BEECC /* Tumblox.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Tumblox.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD62CE72041D375B3A0BEECC /* Tumblox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tumblox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEE36CB776F4086C3654D5F8 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		BF16980302FA1E04AA3867F9 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		CB371FDEFC1BB0D847729457 /* AppRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRoute.swift; sourceTree = "<group>"; };
@@ -164,6 +164,7 @@
 				CDEEB9C6BD27F8626E791A22 /* Views */,
 				6BA37876B8EF0DEF05F7BBB5 /* Frameworks */,
 				5583701FC74C52F0A1ED7045 /* Products */,
+				96C9A36B2F6C63E900B4F9F8 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -215,6 +216,16 @@
 				99B2490252C5A0CEB1193325 /* StripOption.swift */,
 			);
 			path = GameSetup;
+			sourceTree = "<group>";
+		};
+		96C9A36B2F6C63E900B4F9F8 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				"TEMP_BB51300F-E49C-44BA-AE00-6398CB8A649C" /* ContentView.swift */,
+				"TEMP_591DF0EA-058C-4574-B291-774A84CD6C90" /* TumbloxApp.swift */,
+				"TEMP_C013FF22-0CFB-4F69-A5D8-294C0A808903" /* Assets.xcassets */,
+			);
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 		C7DA90D9FDC8629F58BDB102 /* State */ = {
@@ -301,24 +312,6 @@
 			path = Game;
 			sourceTree = "<group>";
 		};
-		"TEMP_B3DD3776-64D8-4865-BABB-4354650357F6" /* Tumblox */ = {
-			isa = PBXGroup;
-			children = (
-				"TEMP_C013FF22-0CFB-4F69-A5D8-294C0A808903" /* Assets.xcassets */,
-				"TEMP_BB51300F-E49C-44BA-AE00-6398CB8A649C" /* ContentView.swift */,
-				"TEMP_591DF0EA-058C-4574-B291-774A84CD6C90" /* TumbloxApp.swift */,
-				034BB23199FFF200B39183F3 /* Navigation */,
-				02CA6B106E53098A1BD406DB /* Models */,
-				C7DA90D9FDC8629F58BDB102 /* State */,
-				55BBAA291A878133FA6964EB /* Theme */,
-				F5AC54962FB8B29898D47B8E /* SupportingFiles */,
-				CDEEB9C6BD27F8626E791A22 /* Views */,
-				0D87787D29A9879B5718A58E /* Engine */,
-				E288DF021A405B48B2A558D6 /* Services */,
-			);
-			path = Tumblox;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -351,7 +344,6 @@
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					16B6B6445894D6D9530D72D5 = {
-						DevelopmentTeam = "";
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -366,7 +358,6 @@
 			);
 			mainGroup = 372677C3C58CD306112D0046;
 			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -515,6 +506,7 @@
 				CODE_SIGN_ENTITLEMENTS = SupportingFiles/Tumblox.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 93H6PRZP38;
 				INFOPLIST_FILE = SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -535,6 +527,7 @@
 				CODE_SIGN_ENTITLEMENTS = SupportingFiles/Tumblox.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 93H6PRZP38;
 				INFOPLIST_FILE = SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -1,6 +1,7 @@
 import SwiftUI
 import Combine
 
+@MainActor
 final class AppState: ObservableObject {
     @Published var navigationPath = NavigationPath()
     @Published var userProgress: UserProgress

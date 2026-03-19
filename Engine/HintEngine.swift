@@ -6,6 +6,14 @@ struct HintPlacement: Equatable {
     let col: Int
     let rotation: Int
     let cells: [(col: Int, row: Int)]
+
+    static func == (lhs: HintPlacement, rhs: HintPlacement) -> Bool {
+        lhs.col == rhs.col &&
+        lhs.rotation == rhs.rotation &&
+        lhs.cells.elementsEqual(rhs.cells, by: { left, right in
+            left.col == right.col && left.row == right.row
+        })
+    }
 }
 
 // MARK: - Hint Engine
@@ -16,6 +24,8 @@ struct HintEngine {
 
     // MARK: - Weights
 
+    private static let columns = 10
+    private static let rows = 20
     private static let weightLinesCleared:  Double = 3.4
     private static let weightHoles:         Double = -3.0
     private static let weightAggHeight:     Double = -0.5
@@ -36,7 +46,7 @@ struct HintEngine {
             var rotated = piece
             rotated.rotation = rotation
 
-            for col in -2..<(GameEngine.columns + 2) {
+            for col in -2..<(columns + 2) {
                 rotated.col = col
 
                 // Skip invalid horizontal positions
@@ -86,8 +96,8 @@ struct HintEngine {
 
         // Place piece into test grid
         for cell in piece.cells {
-            guard cell.row >= 0, cell.row < GameEngine.rows,
-                  cell.col >= 0, cell.col < GameEngine.columns else { continue }
+            guard cell.row >= 0, cell.row < rows,
+                  cell.col >= 0, cell.col < columns else { continue }
             testGrid[cell.row][cell.col] = .filled(.cyan)   // color irrelevant
         }
 
@@ -111,9 +121,9 @@ struct HintEngine {
 
     private static func countHoles(in grid: [[GridCell]]) -> Int {
         var holes = 0
-        for col in 0..<GameEngine.columns {
+        for col in 0..<columns {
             var foundFilled = false
-            for row in 0..<GameEngine.rows {
+            for row in 0..<rows {
                 if case .filled = grid[row][col] {
                     foundFilled = true
                 } else if foundFilled {
@@ -125,10 +135,10 @@ struct HintEngine {
     }
 
     private static func columnHeights(in grid: [[GridCell]]) -> [Int] {
-        (0..<GameEngine.columns).map { col in
-            for row in 0..<GameEngine.rows {
+        (0..<columns).map { col in
+            for row in 0..<rows {
                 if case .filled = grid[row][col] {
-                    return GameEngine.rows - row
+                    return rows - row
                 }
             }
             return 0
@@ -145,13 +155,13 @@ struct HintEngine {
     // MARK: - Validation
 
     private static func isHorizontallyValid(_ piece: Tetromino) -> Bool {
-        piece.cells.allSatisfy { $0.col >= 0 && $0.col < GameEngine.columns }
+        piece.cells.allSatisfy { $0.col >= 0 && $0.col < columns }
     }
 
     private static func isValid(_ piece: Tetromino, in grid: [[GridCell]]) -> Bool {
         for cell in piece.cells {
-            if cell.col < 0 || cell.col >= GameEngine.columns { return false }
-            if cell.row >= GameEngine.rows { return false }
+            if cell.col < 0 || cell.col >= columns { return false }
+            if cell.row >= rows { return false }
             if cell.row >= 0 && !grid[cell.row][cell.col].isEmpty { return false }
         }
         return true
