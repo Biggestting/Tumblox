@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!--
+        Tumblox Privacy Manifest
+        Required for App Store submission (iOS 17.0+ / Xcode 15+)
+        https://developer.apple.com/documentation/bundleresources/privacy_manifest_files
+    -->
+
+    <!-- Does NOT collect data for tracking -->
+    <key>NSPrivacyTracking</key>
+    <false/>
+
+    <!-- No tracking domains used -->
+    <key>NSPrivacyTrackingDomains</key>
+    <array/>
+
+    <!-- Data collected: none sent off-device except via Apple frameworks -->
+    <key>NSPrivacyCollectedDataTypes</key>
+    <array/>
+
+    <!-- Required reason APIs used by Tumblox -->
+    <key>NSPrivacyAccessedAPITypes</key>
+    <array>
+        <!-- UserDefaults: store game progress and settings (CA92.1) -->
+        <dict>
+            <key>NSPrivacyAccessedAPIType</key>
+            <string>NSPrivacyAccessedAPICategoryUserDefaults</string>
+            <key>NSPrivacyAccessedAPITypeReasons</key>
+            <array>
+                <string>CA92.1</string>
+            </array>
+        </dict>
+    </array>
+</dict>
+</plist>

@@ -1,0 +1,648 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		168CC020118B62273639855D /* TumbloxSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0560E53BAF280F1C336B995B /* TumbloxSpacing.swift */; };
+		174DC20116808DD99D4986CF /* UserProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FACD4A444BB9538CE3DA3FE /* UserProgress.swift */; };
+		1A0BA79326BCCD8DBA035BF9 /* GameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B40B7B996489F57967FCD9 /* GameOverView.swift */; };
+		1D28CF19F138A6BA43D02C13 /* ChallengeSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF5013A2A58F61A92DB4A05 /* ChallengeSummaryView.swift */; };
+		1DB6BB19CF63AF0CE6693370 /* PaceSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84BB6B87BB5948A1C57578E /* PaceSection.swift */; };
+		2220E279D91C0F4F00603B03 /* ModeSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A7E807DC3357EB536DEE1A /* ModeSelectView.swift */; };
+		23960EF98BD8B9ED2A7E3AB2 /* PauseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BBB043B38713A3F06E9572 /* PauseView.swift */; };
+		2E6189651F5092812EE99C2B /* AppRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB371FDEFC1BB0D847729457 /* AppRoute.swift */; };
+		33370C0AF71AE58135F88CCE /* GameCenterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FA6D26130269E285B6760C /* GameCenterService.swift */; };
+		34BF7B4FCD21A33993CA2127 /* NextPieceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E014DB450D6DEA872EA72A /* NextPieceView.swift */; };
+		366960857FE006A86E74221E /* GameSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023071F8BDD748863317B987 /* GameSetupView.swift */; };
+		39F49A08F23DFB0377967149 /* ChallengeEvaluator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8128294D9BC7CD2CB2779339 /* ChallengeEvaluator.swift */; };
+		48C348998AE3E33AF9E2A33A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAE099B27BCEDD6A9CBC315C /* StoreKit.framework */; };
+		4F1196AE6DDDC28CDCD11079 /* StripOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B2490252C5A0CEB1193325 /* StripOption.swift */; };
+		59B67440E48F1DF5DDBACCEF /* ChallengeLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F13F1F2312F32164D24DAF /* ChallengeLevel.swift */; };
+		59D41E4DF414E2FAA7C4F654 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = "TEMP_BB51300F-E49C-44BA-AE00-6398CB8A649C" /* ContentView.swift */; };
+		5B98514D702511443669B6BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = "TEMP_C013FF22-0CFB-4F69-A5D8-294C0A808903" /* Assets.xcassets */; };
+		5CEDF28AE31F976CF7360686 /* ChallengeHeroCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8FB7DD5596EC4824BBD985 /* ChallengeHeroCard.swift */; };
+		5CF71022C6557B355832F8D2 /* UserProgressService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90E53FF28684E146BB0467F /* UserProgressService.swift */; };
+		6534C66ECA7F34E33F3F8FB4 /* ModeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B4B1C79C9CE6BEF274A23E /* ModeRow.swift */; };
+		6A6D037776EC2C0A4DA49F19 /* SpeedSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF841DE6F57AF4DB3EA77060 /* SpeedSection.swift */; };
+		6AA68990AEB8BDC2BA130138 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE36CB776F4086C3654D5F8 /* SettingsView.swift */; };
+		6B364822AAD83FD1445EC31B /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F705562370EF15FFA6BF57D /* GameKit.framework */; };
+		888C2D26ED46F1BA0F15B816 /* GameMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDCAC0896E225B685E343A0 /* GameMode.swift */; };
+		91289A4FE6B0A1F87013A39C /* GameHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB74C1E78816CB5C5F6A6D5 /* GameHUD.swift */; };
+		95A1940690640ED26C5CF398 /* DeleteAccountSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B1B3AED8292C1E097A935 /* DeleteAccountSheet.swift */; };
+		9A41FBFB535963A89BCF7643 /* TumbloxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = "TEMP_591DF0EA-058C-4574-B291-774A84CD6C90" /* TumbloxApp.swift */; };
+		9A80750DBA1D37FA2F0AF3BC /* Tetromino.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0531A7C3F83A6974FD00B544 /* Tetromino.swift */; };
+		9C28169DFD4EF7B68D7517EE /* GameEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594ED69CD90B74212DC614F8 /* GameEngine.swift */; };
+		9DABBEDD337F0B75EE8C9AE8 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF16980302FA1E04AA3867F9 /* AppState.swift */; };
+		9F4F1DA29D91326AA884FFFF /* EntitlementManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302B6C3B9D2932BA84731DF1 /* EntitlementManager.swift */; };
+		9FD53F3F9DC50DE43CF92B05 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8390A2CE43679F51FF799CE /* GameView.swift */; };
+		A9E85881F7BC9CFE4D88614C /* GameConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A721CD93E027421BB3DF30FD /* GameConfig.swift */; };
+		BAA85C01A1B07C0EC627D8B8 /* TutorialSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FC32C5E5CF5AC7EE12DDA3 /* TutorialSheet.swift */; };
+		BDBA58E180668FDF125E84B0 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 5C9969D084B28F426FFCAF55 /* PrivacyInfo.xcprivacy */; };
+		BE980ED53A64F2D302849804 /* TumbloxPrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C363A5FFC3DFB0C48C1A737 /* TumbloxPrimaryButton.swift */; };
+		BE9A824D366E1A1D354D9B20 /* GameCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4BF2AB08C2C545BFB33191 /* GameCanvas.swift */; };
+		BF00B29EDA44622C349A3046 /* HapticService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB781EEFAFFA40361DD7F9D /* HapticService.swift */; };
+		C0DF5CB38906BCA85B12A342 /* ControlBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550A168509B3A4638D1503D7 /* ControlBar.swift */; };
+		CCB29FB2A3914A581DD74D4D /* TumbloxTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = E944AB681E5C792B61E0D0A0 /* TumbloxTypography.swift */; };
+		CF3262F0A2742A0739029438 /* SessionSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4014E85C0F08A3D6492F10EB /* SessionSection.swift */; };
+		D1C4903FE3138536C838AEC9 /* PreGameSectionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86826729AC7442AFBD236532 /* PreGameSectionLabel.swift */; };
+		D24A86958C3E9D78B64F3B05 /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28E1EC4BC2245CA503A72C /* PaywallView.swift */; };
+		EA31ABD8B7B001548EC1488E /* ModifiersSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525E307775385781BC7BEBFF /* ModifiersSection.swift */; };
+		EBDE7738195772D01D4B7E30 /* HintEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E1FF118FD30258226F7C90 /* HintEngine.swift */; };
+		F2CC0EF08FDE39FFE5429FE2 /* UserSettings+ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE9B409171C588F1E4FD7E8 /* UserSettings+ColorScheme.swift */; };
+		F9CF79D03237E9347872EF37 /* TumbloxColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CB13872B0103E10EE2C24C /* TumbloxColors.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		023071F8BDD748863317B987 /* GameSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSetupView.swift; sourceTree = "<group>"; };
+		0531A7C3F83A6974FD00B544 /* Tetromino.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tetromino.swift; sourceTree = "<group>"; };
+		0560E53BAF280F1C336B995B /* TumbloxSpacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TumbloxSpacing.swift; sourceTree = "<group>"; };
+		0C363A5FFC3DFB0C48C1A737 /* TumbloxPrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TumbloxPrimaryButton.swift; sourceTree = "<group>"; };
+		0E5B1B3AED8292C1E097A935 /* DeleteAccountSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountSheet.swift; sourceTree = "<group>"; };
+		140B2835564360F1C06AE69B /* Tumblox.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Tumblox.entitlements; sourceTree = "<group>"; };
+		17B4B1C79C9CE6BEF274A23E /* ModeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeRow.swift; sourceTree = "<group>"; };
+		1CDCAC0896E225B685E343A0 /* GameMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMode.swift; sourceTree = "<group>"; };
+		1EB74C1E78816CB5C5F6A6D5 /* GameHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHUD.swift; sourceTree = "<group>"; };
+		302B6C3B9D2932BA84731DF1 /* EntitlementManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntitlementManager.swift; sourceTree = "<group>"; };
+		30FA6D26130269E285B6760C /* GameCenterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCenterService.swift; sourceTree = "<group>"; };
+		3FACD4A444BB9538CE3DA3FE /* UserProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProgress.swift; sourceTree = "<group>"; };
+		4014E85C0F08A3D6492F10EB /* SessionSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionSection.swift; sourceTree = "<group>"; };
+		47E1FF118FD30258226F7C90 /* HintEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintEngine.swift; sourceTree = "<group>"; };
+		4BF5013A2A58F61A92DB4A05 /* ChallengeSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeSummaryView.swift; sourceTree = "<group>"; };
+		4DE9B409171C588F1E4FD7E8 /* UserSettings+ColorScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserSettings+ColorScheme.swift"; sourceTree = "<group>"; };
+		525E307775385781BC7BEBFF /* ModifiersSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifiersSection.swift; sourceTree = "<group>"; };
+		550A168509B3A4638D1503D7 /* ControlBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlBar.swift; sourceTree = "<group>"; };
+		57F13F1F2312F32164D24DAF /* ChallengeLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeLevel.swift; sourceTree = "<group>"; };
+		594ED69CD90B74212DC614F8 /* GameEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEngine.swift; sourceTree = "<group>"; };
+		59FC32C5E5CF5AC7EE12DDA3 /* TutorialSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialSheet.swift; sourceTree = "<group>"; };
+		5C9969D084B28F426FFCAF55 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		6F705562370EF15FFA6BF57D /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		74A7E807DC3357EB536DEE1A /* ModeSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeSelectView.swift; sourceTree = "<group>"; };
+		7AB781EEFAFFA40361DD7F9D /* HapticService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticService.swift; sourceTree = "<group>"; };
+		7F8FB7DD5596EC4824BBD985 /* ChallengeHeroCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeHeroCard.swift; sourceTree = "<group>"; };
+		8128294D9BC7CD2CB2779339 /* ChallengeEvaluator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeEvaluator.swift; sourceTree = "<group>"; };
+		86826729AC7442AFBD236532 /* PreGameSectionLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreGameSectionLabel.swift; sourceTree = "<group>"; };
+		91B40B7B996489F57967FCD9 /* GameOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverView.swift; sourceTree = "<group>"; };
+		99B2490252C5A0CEB1193325 /* StripOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StripOption.swift; sourceTree = "<group>"; };
+		A721CD93E027421BB3DF30FD /* GameConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameConfig.swift; sourceTree = "<group>"; };
+		AAE099B27BCEDD6A9CBC315C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		B84BB6B87BB5948A1C57578E /* PaceSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaceSection.swift; sourceTree = "<group>"; };
+		BD62CE72041D375B3A0BEECC /* Tumblox.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Tumblox.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEE36CB776F4086C3654D5F8 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		BF16980302FA1E04AA3867F9 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		CB371FDEFC1BB0D847729457 /* AppRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRoute.swift; sourceTree = "<group>"; };
+		CF4BF2AB08C2C545BFB33191 /* GameCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCanvas.swift; sourceTree = "<group>"; };
+		D0CB13872B0103E10EE2C24C /* TumbloxColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TumbloxColors.swift; sourceTree = "<group>"; };
+		D7E014DB450D6DEA872EA72A /* NextPieceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextPieceView.swift; sourceTree = "<group>"; };
+		D90E53FF28684E146BB0467F /* UserProgressService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProgressService.swift; sourceTree = "<group>"; };
+		DA28E1EC4BC2245CA503A72C /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallView.swift; sourceTree = "<group>"; };
+		E8390A2CE43679F51FF799CE /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		E944AB681E5C792B61E0D0A0 /* TumbloxTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TumbloxTypography.swift; sourceTree = "<group>"; };
+		EF841DE6F57AF4DB3EA77060 /* SpeedSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedSection.swift; sourceTree = "<group>"; };
+		F1BBB043B38713A3F06E9572 /* PauseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseView.swift; sourceTree = "<group>"; };
+		"TEMP_591DF0EA-058C-4574-B291-774A84CD6C90" /* TumbloxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TumbloxApp.swift; sourceTree = "<group>"; };
+		"TEMP_BB51300F-E49C-44BA-AE00-6398CB8A649C" /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		"TEMP_C013FF22-0CFB-4F69-A5D8-294C0A808903" /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		73D4CBE645B71EA70835A55A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B364822AAD83FD1445EC31B /* GameKit.framework in Frameworks */,
+				48C348998AE3E33AF9E2A33A /* StoreKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		02CA6B106E53098A1BD406DB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				57F13F1F2312F32164D24DAF /* ChallengeLevel.swift */,
+				A721CD93E027421BB3DF30FD /* GameConfig.swift */,
+				1CDCAC0896E225B685E343A0 /* GameMode.swift */,
+				3FACD4A444BB9538CE3DA3FE /* UserProgress.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		034BB23199FFF200B39183F3 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				CB371FDEFC1BB0D847729457 /* AppRoute.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		0D87787D29A9879B5718A58E /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+				8128294D9BC7CD2CB2779339 /* ChallengeEvaluator.swift */,
+				594ED69CD90B74212DC614F8 /* GameEngine.swift */,
+				47E1FF118FD30258226F7C90 /* HintEngine.swift */,
+				0531A7C3F83A6974FD00B544 /* Tetromino.swift */,
+			);
+			path = Engine;
+			sourceTree = "<group>";
+		};
+		372677C3C58CD306112D0046 = {
+			isa = PBXGroup;
+			children = (
+				0D87787D29A9879B5718A58E /* Engine */,
+				02CA6B106E53098A1BD406DB /* Models */,
+				034BB23199FFF200B39183F3 /* Navigation */,
+				E288DF021A405B48B2A558D6 /* Services */,
+				C7DA90D9FDC8629F58BDB102 /* State */,
+				F5AC54962FB8B29898D47B8E /* SupportingFiles */,
+				55BBAA291A878133FA6964EB /* Theme */,
+				CDEEB9C6BD27F8626E791A22 /* Views */,
+				6BA37876B8EF0DEF05F7BBB5 /* Frameworks */,
+				5583701FC74C52F0A1ED7045 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5583701FC74C52F0A1ED7045 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BD62CE72041D375B3A0BEECC /* Tumblox.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		55BBAA291A878133FA6964EB /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				D0CB13872B0103E10EE2C24C /* TumbloxColors.swift */,
+				0560E53BAF280F1C336B995B /* TumbloxSpacing.swift */,
+				E944AB681E5C792B61E0D0A0 /* TumbloxTypography.swift */,
+				4DE9B409171C588F1E4FD7E8 /* UserSettings+ColorScheme.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		6BA37876B8EF0DEF05F7BBB5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6F705562370EF15FFA6BF57D /* GameKit.framework */,
+				AAE099B27BCEDD6A9CBC315C /* StoreKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9126E8C68FA4BAD751577003 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				0E5B1B3AED8292C1E097A935 /* DeleteAccountSheet.swift */,
+				BEE36CB776F4086C3654D5F8 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		941AA2CE066B2A3DFA89252C /* GameSetup */ = {
+			isa = PBXGroup;
+			children = (
+				023071F8BDD748863317B987 /* GameSetupView.swift */,
+				525E307775385781BC7BEBFF /* ModifiersSection.swift */,
+				B84BB6B87BB5948A1C57578E /* PaceSection.swift */,
+				4014E85C0F08A3D6492F10EB /* SessionSection.swift */,
+				EF841DE6F57AF4DB3EA77060 /* SpeedSection.swift */,
+				99B2490252C5A0CEB1193325 /* StripOption.swift */,
+			);
+			path = GameSetup;
+			sourceTree = "<group>";
+		};
+		C7DA90D9FDC8629F58BDB102 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				BF16980302FA1E04AA3867F9 /* AppState.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		CDEEB9C6BD27F8626E791A22 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E04BE4A66D1C3203341D4274 /* Common */,
+				FEE80232459499D4B13FEBAD /* Game */,
+				941AA2CE066B2A3DFA89252C /* GameSetup */,
+				D58EB5F9A4B211452F7EDFD0 /* ModeSelect */,
+				FEDAF986411C8C34FCB68952 /* Paywall */,
+				9126E8C68FA4BAD751577003 /* Settings */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D58EB5F9A4B211452F7EDFD0 /* ModeSelect */ = {
+			isa = PBXGroup;
+			children = (
+				7F8FB7DD5596EC4824BBD985 /* ChallengeHeroCard.swift */,
+				17B4B1C79C9CE6BEF274A23E /* ModeRow.swift */,
+				74A7E807DC3357EB536DEE1A /* ModeSelectView.swift */,
+			);
+			path = ModeSelect;
+			sourceTree = "<group>";
+		};
+		E04BE4A66D1C3203341D4274 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				86826729AC7442AFBD236532 /* PreGameSectionLabel.swift */,
+				0C363A5FFC3DFB0C48C1A737 /* TumbloxPrimaryButton.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		E288DF021A405B48B2A558D6 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				302B6C3B9D2932BA84731DF1 /* EntitlementManager.swift */,
+				30FA6D26130269E285B6760C /* GameCenterService.swift */,
+				7AB781EEFAFFA40361DD7F9D /* HapticService.swift */,
+				D90E53FF28684E146BB0467F /* UserProgressService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		F5AC54962FB8B29898D47B8E /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				5C9969D084B28F426FFCAF55 /* PrivacyInfo.xcprivacy */,
+				140B2835564360F1C06AE69B /* Tumblox.entitlements */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		FEDAF986411C8C34FCB68952 /* Paywall */ = {
+			isa = PBXGroup;
+			children = (
+				DA28E1EC4BC2245CA503A72C /* PaywallView.swift */,
+			);
+			path = Paywall;
+			sourceTree = "<group>";
+		};
+		FEE80232459499D4B13FEBAD /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				4BF5013A2A58F61A92DB4A05 /* ChallengeSummaryView.swift */,
+				550A168509B3A4638D1503D7 /* ControlBar.swift */,
+				CF4BF2AB08C2C545BFB33191 /* GameCanvas.swift */,
+				1EB74C1E78816CB5C5F6A6D5 /* GameHUD.swift */,
+				91B40B7B996489F57967FCD9 /* GameOverView.swift */,
+				E8390A2CE43679F51FF799CE /* GameView.swift */,
+				D7E014DB450D6DEA872EA72A /* NextPieceView.swift */,
+				F1BBB043B38713A3F06E9572 /* PauseView.swift */,
+				59FC32C5E5CF5AC7EE12DDA3 /* TutorialSheet.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		"TEMP_B3DD3776-64D8-4865-BABB-4354650357F6" /* Tumblox */ = {
+			isa = PBXGroup;
+			children = (
+				"TEMP_C013FF22-0CFB-4F69-A5D8-294C0A808903" /* Assets.xcassets */,
+				"TEMP_BB51300F-E49C-44BA-AE00-6398CB8A649C" /* ContentView.swift */,
+				"TEMP_591DF0EA-058C-4574-B291-774A84CD6C90" /* TumbloxApp.swift */,
+				034BB23199FFF200B39183F3 /* Navigation */,
+				02CA6B106E53098A1BD406DB /* Models */,
+				C7DA90D9FDC8629F58BDB102 /* State */,
+				55BBAA291A878133FA6964EB /* Theme */,
+				F5AC54962FB8B29898D47B8E /* SupportingFiles */,
+				CDEEB9C6BD27F8626E791A22 /* Views */,
+				0D87787D29A9879B5718A58E /* Engine */,
+				E288DF021A405B48B2A558D6 /* Services */,
+			);
+			path = Tumblox;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		16B6B6445894D6D9530D72D5 /* Tumblox */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 47BC72832EF081E58F36DE44 /* Build configuration list for PBXNativeTarget "Tumblox" */;
+			buildPhases = (
+				E49EBD4EF017FA5612FAB428 /* Sources */,
+				AF1E9B959619A827E33D0602 /* Resources */,
+				73D4CBE645B71EA70835A55A /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Tumblox;
+			packageProductDependencies = (
+			);
+			productName = Tumblox;
+			productReference = BD62CE72041D375B3A0BEECC /* Tumblox.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5C67572149758F7E4E33C156 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					16B6B6445894D6D9530D72D5 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = ABDBED80A735EC6D5FCE2507 /* Build configuration list for PBXProject "Tumblox" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 372677C3C58CD306112D0046;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				16B6B6445894D6D9530D72D5 /* Tumblox */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AF1E9B959619A827E33D0602 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B98514D702511443669B6BB /* Assets.xcassets in Resources */,
+				BDBA58E180668FDF125E84B0 /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E49EBD4EF017FA5612FAB428 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E6189651F5092812EE99C2B /* AppRoute.swift in Sources */,
+				9DABBEDD337F0B75EE8C9AE8 /* AppState.swift in Sources */,
+				39F49A08F23DFB0377967149 /* ChallengeEvaluator.swift in Sources */,
+				5CEDF28AE31F976CF7360686 /* ChallengeHeroCard.swift in Sources */,
+				59B67440E48F1DF5DDBACCEF /* ChallengeLevel.swift in Sources */,
+				1D28CF19F138A6BA43D02C13 /* ChallengeSummaryView.swift in Sources */,
+				59D41E4DF414E2FAA7C4F654 /* ContentView.swift in Sources */,
+				C0DF5CB38906BCA85B12A342 /* ControlBar.swift in Sources */,
+				95A1940690640ED26C5CF398 /* DeleteAccountSheet.swift in Sources */,
+				9F4F1DA29D91326AA884FFFF /* EntitlementManager.swift in Sources */,
+				BE9A824D366E1A1D354D9B20 /* GameCanvas.swift in Sources */,
+				33370C0AF71AE58135F88CCE /* GameCenterService.swift in Sources */,
+				A9E85881F7BC9CFE4D88614C /* GameConfig.swift in Sources */,
+				9C28169DFD4EF7B68D7517EE /* GameEngine.swift in Sources */,
+				91289A4FE6B0A1F87013A39C /* GameHUD.swift in Sources */,
+				888C2D26ED46F1BA0F15B816 /* GameMode.swift in Sources */,
+				1A0BA79326BCCD8DBA035BF9 /* GameOverView.swift in Sources */,
+				366960857FE006A86E74221E /* GameSetupView.swift in Sources */,
+				9FD53F3F9DC50DE43CF92B05 /* GameView.swift in Sources */,
+				BF00B29EDA44622C349A3046 /* HapticService.swift in Sources */,
+				EBDE7738195772D01D4B7E30 /* HintEngine.swift in Sources */,
+				6534C66ECA7F34E33F3F8FB4 /* ModeRow.swift in Sources */,
+				2220E279D91C0F4F00603B03 /* ModeSelectView.swift in Sources */,
+				EA31ABD8B7B001548EC1488E /* ModifiersSection.swift in Sources */,
+				34BF7B4FCD21A33993CA2127 /* NextPieceView.swift in Sources */,
+				1DB6BB19CF63AF0CE6693370 /* PaceSection.swift in Sources */,
+				23960EF98BD8B9ED2A7E3AB2 /* PauseView.swift in Sources */,
+				D24A86958C3E9D78B64F3B05 /* PaywallView.swift in Sources */,
+				D1C4903FE3138536C838AEC9 /* PreGameSectionLabel.swift in Sources */,
+				CF3262F0A2742A0739029438 /* SessionSection.swift in Sources */,
+				6AA68990AEB8BDC2BA130138 /* SettingsView.swift in Sources */,
+				6A6D037776EC2C0A4DA49F19 /* SpeedSection.swift in Sources */,
+				4F1196AE6DDDC28CDCD11079 /* StripOption.swift in Sources */,
+				9A80750DBA1D37FA2F0AF3BC /* Tetromino.swift in Sources */,
+				9A41FBFB535963A89BCF7643 /* TumbloxApp.swift in Sources */,
+				F9CF79D03237E9347872EF37 /* TumbloxColors.swift in Sources */,
+				BE980ED53A64F2D302849804 /* TumbloxPrimaryButton.swift in Sources */,
+				168CC020118B62273639855D /* TumbloxSpacing.swift in Sources */,
+				CCB29FB2A3914A581DD74D4D /* TumbloxTypography.swift in Sources */,
+				BAA85C01A1B07C0EC627D8B8 /* TutorialSheet.swift in Sources */,
+				174DC20116808DD99D4986CF /* UserProgress.swift in Sources */,
+				5CF71022C6557B355832F8D2 /* UserProgressService.swift in Sources */,
+				F2CC0EF08FDE39FFE5429FE2 /* UserSettings+ColorScheme.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		35AF1807A25F9EB2C1ECB672 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_BITCODE = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = SupportingFiles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = Tumblox;
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CE45442A39F83FF97FE44DDD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SupportingFiles/Tumblox.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = SupportingFiles/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tumblox.app;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DCAA5DA6BD32BE5544E71EB0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SupportingFiles/Tumblox.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				INFOPLIST_FILE = SupportingFiles/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tumblox.app;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F038873BFA25E4C35711F91B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_BITCODE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = SupportingFiles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = Tumblox;
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		47BC72832EF081E58F36DE44 /* Build configuration list for PBXNativeTarget "Tumblox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE45442A39F83FF97FE44DDD /* Debug */,
+				DCAA5DA6BD32BE5544E71EB0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		ABDBED80A735EC6D5FCE2507 /* Build configuration list for PBXProject "Tumblox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F038873BFA25E4C35711F91B /* Debug */,
+				35AF1807A25F9EB2C1ECB672 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5C67572149758F7E4E33C156 /* Project object */;
+}
