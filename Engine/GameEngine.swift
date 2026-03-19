@@ -46,8 +46,8 @@ final class GameEngine: ObservableObject {
     // MARK: - Private
 
     private let config: GameConfig
-    private var fallTimer: AnyCancellable?
-    private var clockTimer: AnyCancellable?
+    private var fallTask: Task<Void, Never>?
+    private var clockTask: Task<Void, Never>?
     private var undoStack: [[[GridCell]]] = []
     private var hintTask: Task<Void, Never>? = nil
     private let maxUndos = 5
@@ -84,8 +84,8 @@ final class GameEngine: ObservableObject {
     func pause() {
         guard phase == .playing else { return }
         phase = .paused
-        fallTimer?.cancel()
-        clockTimer?.cancel()
+        fallTask?.cancel()
+        clockTask?.cancel()
     }
 
     func resume() {
@@ -192,25 +192,29 @@ final class GameEngine: ObservableObject {
 
     private func startFallTimer() {
         let interval = config.autoFallSpeed.interval
-        fallTimer = Timer.publish(every: interval, on: .main, in: .common)
-            .autoconnect()
-            .sink { [weak self] _ in
-                self?.dropOneRow()
+        fallTask?.cancel()
+        fallTask = Task { [weak self] in
+            while !Task.isCancelled {
+                try? await Task.sleep(nanoseconds: UInt64(interval * 1_000_000_000))
+                guard !Task.isCancelled, let self else { break }
+                self.dropOneRow()
             }
+        }
     }
 
     private func startClock() {
-        clockTimer = Timer.publish(every: 1, on: .main, in: .common)
-            .autoconnect()
-            .sink { [weak self] _ in
-                guard let self else { return }
+        clockTask?.cancel()
+        clockTask = Task { [weak self] in
+            while !Task.isCancelled {
+                try? await Task.sleep(nanoseconds: 1_000_000_000)
+                guard !Task.isCancelled, let self else { break }
                 self.elapsedSeconds += 1
-                // Check session duration
                 if let limit = self.config.sessionDuration.seconds,
                    Double(self.elapsedSeconds) >= limit {
                     self.endSession()
                 }
             }
+        }
     }
 
     // MARK: - Core logic
@@ -352,8 +356,8 @@ final class GameEngine: ObservableObject {
         if case .incomplete = result { return }
         challengeResult = result
         if case .success = result {
-            fallTimer?.cancel()
-            clockTimer?.cancel()
+            fallTask?.cancel()
+            clockTask?.cancel()
             phase = .sessionComplete
             HapticService.shared.success()
         } else if case .failure = result {
@@ -389,16 +393,16 @@ final class GameEngine: ObservableObject {
 
     private func triggerGameOver() {
         phase = .gameOver
-        fallTimer?.cancel()
-        clockTimer?.cancel()
+        fallTask?.cancel()
+        clockTask?.cancel()
         evaluateChallenge()
         HapticService.shared.failure()
     }
 
     private func endSession() {
         phase = .sessionComplete
-        fallTimer?.cancel()
-        clockTimer?.cancel()
+        fallTask?.cancel()
+        clockTask?.cancel()
         evaluateChallenge()
     }
 

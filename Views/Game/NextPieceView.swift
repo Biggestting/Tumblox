@@ -6,8 +6,8 @@ struct NextPieceView: View {
     @Environment(\.colorScheme) var colorScheme
 
     private let previewSize: CGFloat = 56
-    private let tileSize: CGFloat = 10
-    private let borderRadius: CGFloat = 2
+    private let tileSize: CGFloat = 14
+    private let borderRadius: CGFloat = 3
 
     var body: some View {
         ZStack {

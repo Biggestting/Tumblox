@@ -1,4 +1,5 @@
 import SwiftUI
+import Combine
 
 struct GameView: View {
     @EnvironmentObject var appState: AppState
@@ -213,10 +214,23 @@ struct GameView: View {
 
 // MARK: - Engine Holder
 
-/// Observable wrapper so engine can be created after onAppear (EnvironmentObject available)
+/// Observable wrapper so engine can be created after onAppear (EnvironmentObject available).
+/// Forwards the engine's objectWillChange so SwiftUI re-renders when the engine
+/// publishes updates (e.g., auto-fall timer ticks, score changes).
 @MainActor
 final class EngineHolder: ObservableObject {
-    @Published var engine: GameEngine?
+    @Published var engine: GameEngine? {
+        didSet {
+            engineSub?.cancel()
+            if let engine {
+                engineSub = engine.objectWillChange
+                    .sink { [weak self] _ in
+                        self?.objectWillChange.send()
+                    }
+            }
+        }
+    }
+    private var engineSub: AnyCancellable?
 
     func start(config: GameConfig) {
         guard engine == nil else { return }
