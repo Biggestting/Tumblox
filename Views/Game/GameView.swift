@@ -67,8 +67,8 @@ struct GameView: View {
                 // tap vs swipe by total travel distance, eliminating the conflict
                 // between a separate DragGesture and onTapGesture competing for events.
                 .gesture(boardGesture(engine: engine, config: config))
-                .padding(.horizontal, TumbloxSpacing.screenHorizontal)
-                .padding(.vertical, 8)
+                .padding(.horizontal, 4)
+                .padding(.vertical, 4)
 
                 ControlBar(
                     onReturn:  { engine.undo() },
