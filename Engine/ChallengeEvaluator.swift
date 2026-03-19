@@ -139,8 +139,9 @@ struct ChallengeEvaluator {
     // MARK: - Grid helpers
 
     private static func allColumnsFilled(_ columns: [Int], grid: [[GridCell]]) -> Bool {
-        columns.allSatisfy { col in
-            guard col < GameEngine.columns else { return false }
+        let columnCount = grid.first?.count ?? 10
+        return columns.allSatisfy { col in
+            guard col < columnCount else { return false }
             return grid.contains { row in
                 if case .filled = row[col] { return true }
                 return false
@@ -155,14 +156,12 @@ extension ChallengeEvaluator {
     /// Checks for a pyramid: each row above the base must be strictly narrower and centered.
     static func detectPyramid(in grid: [[GridCell]]) -> Bool {
         var rowWidths: [Int] = []
-        var lastFilledRow = -1
 
-        for (rowIdx, row) in grid.enumerated().reversed() {
+        for (_, row) in grid.enumerated().reversed() {
             let filled = row.enumerated().compactMap { $0.element.isEmpty ? nil : $0.offset }
             if filled.isEmpty { continue }
             let width = (filled.last! - filled.first!) + 1
             rowWidths.append(width)
-            lastFilledRow = rowIdx
         }
 
         guard rowWidths.count >= 3 else { return false }
