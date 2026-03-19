@@ -106,7 +106,7 @@ struct SettingsView: View {
             Text(title)
                 .font(TumbloxTypography.sectionEyebrow)
                 .kerning(2.5)
-                .foregroundColor(TumbloxColors.textSecondary(colorScheme))
+                .foregroundColor(.primaryGradientMid)
                 .padding(.horizontal, TumbloxSpacing.screenHorizontal)
 
             content()

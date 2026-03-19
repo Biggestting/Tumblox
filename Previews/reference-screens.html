@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=390, initial-scale=1">
+<title>Tumblox – Reference Screens</title>
+<style>
+  :root {
+    /* Light mode tokens */
+    --bg: #F6F5F8;
+    --card: #FFFFFF;
+    --surface-elevated: #EEEDF2;
+    --board: #EFEEF3;
+    --text-primary: #1A1A2E;
+    --text-secondary: #6B7280;
+    --text-muted: #9CA3AF;
+    --divider: #E5E7EB;
+    --purple: #8B5CF6;
+    --pink: #EC4899;
+    --orange: #F97316;
+    --accent: #8B5CF6;
+    --destructive: #FF3B30;
+    --gradient: linear-gradient(90deg, #8B5CF6, #EC4899, #F97316);
+    --gradient-accent: linear-gradient(90deg, #EC4899, #F97316);
+    --shadow: 0 2px 8px rgba(0,0,0,0.04);
+    /* Piece colors */
+    --cyan: #00C8FF;
+    --yellow: #FFD600;
+    --piece-purple: #A855F7;
+    --green: #22C55E;
+    --red: #EF4444;
+    --blue: #3B82F6;
+    --piece-orange: #F97316;
+    /* Dark tokens */
+    --dark-bg: #000000;
+    --dark-card: #111111;
+    --dark-hud: #0D0D0D;
+    --dark-control: #1A1A1A;
+    --dark-text: #FFFFFF;
+    --dark-text-sec: rgba(255,255,255,0.55);
+    --dark-text-muted: rgba(255,255,255,0.30);
+    --dark-accent: #F5A623;
+    --teal: #2DD4BF;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system, 'SF Pro Rounded', system-ui, sans-serif; background: #e0dfe4; }
+  .page-title { text-align:center; padding:40px 20px 20px; font-size:28px; font-weight:800; color:#333; }
+  .page-subtitle { text-align:center; padding:0 20px 40px; font-size:14px; color:#666; }
+  .screens-grid { display:flex; flex-wrap:wrap; justify-content:center; gap:40px; padding:0 20px 60px; }
+  .screen-wrap { display:flex; flex-direction:column; align-items:center; }
+  .screen-label { font-size:13px; font-weight:700; color:#666; margin-bottom:12px; letter-spacing:1px; text-transform:uppercase; }
+
+  .phone {
+    width:390px; height:844px; border-radius:44px; overflow:hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    position:relative;
+  }
+  .phone-inner { width:100%; height:100%; overflow-y:auto; position:relative; }
+
+  /* ---- STATUS BAR ---- */
+  .status-bar {
+    height:54px; display:flex; align-items:flex-end; justify-content:space-between;
+    padding:0 28px 8px; font-size:15px; font-weight:600;
+  }
+  .status-bar.light { background: var(--bg); color: var(--text-primary); }
+  .status-bar.dark { background: var(--dark-bg); color: var(--dark-text); }
+  .status-icons { display:flex; gap:5px; font-size:12px; }
+
+  /* ---- LIGHT SCREENS ---- */
+
+  /* 1. Mode Select */
+  .mode-select { background: var(--bg); min-height:790px; }
+  .mode-select .header { padding:16px 16px 8px; display:flex; justify-content:space-between; align-items:center; }
+  .mode-select .wordmark {
+    font-size:34px; font-weight:800;
+    background: var(--gradient); -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+  }
+  .mode-select .gear { font-size:22px; color: var(--text-muted); }
+  .section-label { font-size:11px; font-weight:700; letter-spacing:2.5px; color: var(--pink); padding:24px 16px 8px; }
+  .challenge-hero {
+    margin:0 16px; border-radius:20px; padding:24px; position:relative; overflow:hidden;
+    background: linear-gradient(135deg, rgba(139,92,246,0.06), rgba(236,72,153,0.06), rgba(249,115,22,0.06));
+    border:1px solid rgba(139,92,246,0.15);
+    box-shadow: var(--shadow);
+  }
+  .challenge-hero .eyebrow { font-size:11px; font-weight:700; letter-spacing:2px; background:var(--gradient); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+  .challenge-hero .level { font-size:48px; font-weight:800; color:var(--text-primary); margin:4px 0; }
+  .challenge-hero .subtitle { font-size:13px; color:var(--text-secondary); }
+  .challenge-hero .progress-bar { height:4px; background:var(--divider); border-radius:2px; margin-top:16px; }
+  .challenge-hero .progress-fill { height:100%; width:6%; border-radius:2px; background:var(--gradient); }
+
+  .mode-row {
+    margin:0 16px; background:var(--card); padding:14px 16px; display:flex; align-items:center;
+    border-bottom:1px solid var(--divider);
+  }
+  .mode-row:first-child { border-radius:16px 16px 0 0; }
+  .mode-row:last-child { border-radius:0 0 16px 16px; border-bottom:none; }
+  .mode-row .accent-bar { width:3px; height:36px; border-radius:1.5px; margin-right:14px; background:var(--gradient); }
+  .mode-row .info { flex:1; }
+  .mode-row .name { font-size:15px; font-weight:700; color:var(--text-primary); }
+  .mode-row .desc { font-size:13px; color:var(--text-secondary); margin-top:2px; }
+  .mode-row .score { font-size:20px; font-weight:700; background:var(--gradient); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+  .mode-row .locked { font-size:14px; color:var(--text-muted); }
+
+  /* 2. Game Setup */
+  .game-setup { background:var(--bg); min-height:790px; }
+  .game-setup .back { padding:12px 16px; font-size:14px; font-weight:600; letter-spacing:1.5px; color:var(--accent); }
+  .game-setup .back::before { content:'‹ '; font-size:18px; }
+  .game-setup .mode-title { padding:8px 16px 0; }
+  .game-setup .mode-title h1 { font-size:28px; font-weight:800; color:var(--text-primary); }
+  .game-setup .mode-title p { font-size:13px; color:var(--text-secondary); margin-top:4px; }
+
+  .pace-card {
+    margin:0 16px; background:var(--card); border-radius:16px; overflow:hidden;
+    box-shadow:var(--shadow);
+  }
+  .pace-option { display:flex; align-items:center; padding:0; height:56px; }
+  .pace-option .bar { width:3px; height:36px; border-radius:1.5px; margin:0 14px 0 0; }
+  .pace-option .bar.active { background:var(--gradient); }
+  .pace-option .bar.inactive { background:transparent; }
+  .pace-option .text .title { font-size:15px; color:var(--text-primary); }
+  .pace-option .text .title.bold { font-weight:700; }
+  .pace-option .text .sub { font-size:13px; color:var(--text-muted); margin-top:2px; }
+  .pace-divider { height:1px; background:var(--divider); margin-left:17px; }
+
+  .strip-row {
+    margin:0 16px; background:var(--card); border-radius:16px; display:flex;
+    padding:0 16px; box-shadow:var(--shadow);
+  }
+  .strip-option { padding:10px 14px; font-size:13px; font-weight:600; color:var(--text-secondary); position:relative; }
+  .strip-option.active { color:var(--text-primary); }
+  .strip-option.active::after {
+    content:''; position:absolute; bottom:0; left:14px; right:14px; height:2px;
+    background:var(--gradient);
+  }
+
+  .cta-button {
+    margin:8px 16px 0; height:54px; border-radius:14px; background:var(--gradient);
+    display:flex; align-items:center; justify-content:center; gap:8px;
+    color:#fff; font-size:15px; font-weight:700;
+    box-shadow: 0 4px 8px rgba(236,72,153,0.3);
+  }
+
+  /* 5. Game HUD */
+  .game-screen { background:var(--bg); min-height:790px; display:flex; flex-direction:column; }
+  .game-screen.dark-game { background:var(--dark-bg); }
+  .hud {
+    height:64px; display:flex; align-items:center; background:var(--surface-elevated);
+  }
+  .hud.dark-hud { background:var(--dark-hud); }
+  .hud .stat { flex:1; text-align:center; }
+  .hud .stat .val { font-size:28px; font-weight:800; color:var(--text-primary); }
+  .hud.dark-hud .stat .val { color:var(--teal); }
+  .hud .stat .lbl { font-size:10px; font-weight:600; letter-spacing:1.5px; color:var(--text-secondary); }
+  .hud.dark-hud .stat .lbl { color:rgba(45,212,191,0.7); }
+  .hud .divider { width:1px; height:32px; background:var(--divider); opacity:0.12; }
+  .hud .next-piece { width:56px; height:56px; background:var(--card); border-radius:8px; margin:0 12px; display:flex; align-items:center; justify-content:center; }
+  .hud.dark-hud .next-piece { background:var(--dark-card); }
+
+  .board-area { flex:1; padding:8px 16px; display:flex; align-items:center; justify-content:center; }
+  .board {
+    width:280px; height:560px; border-radius:8px; position:relative;
+    background:var(--board);
+    border:1px solid rgba(0,0,0,0.06);
+  }
+  .board.dark-board {
+    background:#080808;
+    border:1px solid rgba(45,212,191,0.12);
+  }
+  .board .grid-line-v { position:absolute; top:0; bottom:0; width:0.5px; background:rgba(0,0,0,0.05); }
+  .board.dark-board .grid-line-v { background:rgba(255,255,255,0.05); }
+  .board .grid-line-h { position:absolute; left:0; right:0; height:0.5px; background:rgba(0,0,0,0.05); }
+  .board.dark-board .grid-line-h { background:rgba(255,255,255,0.05); }
+  .board .piece { position:absolute; border-radius:3px; }
+
+  .control-bar {
+    height:72px; display:flex; align-items:center; background:var(--surface-elevated);
+  }
+  .control-bar.dark-ctrl { background:var(--dark-control); }
+  .control-bar .btn { flex:1; text-align:center; font-size:22px; color:var(--text-primary); }
+  .control-bar.dark-ctrl .btn { color:var(--dark-text); }
+
+  /* 7. Pause */
+  .overlay-screen {
+    min-height:790px; display:flex; align-items:center; justify-content:center;
+    background:rgba(246,245,248,0.85); backdrop-filter:blur(20px);
+  }
+  .overlay-screen.dark-overlay { background:rgba(0,0,0,0.75); }
+  .overlay-card { text-align:center; padding:40px; }
+  .overlay-card .eyebrow { font-size:11px; font-weight:700; letter-spacing:3px; color:var(--text-secondary); }
+  .overlay-card .title { font-size:28px; font-weight:800; color:var(--text-primary); margin-top:6px; }
+  .overlay-card .score-val { font-size:28px; font-weight:800; margin-top:24px; background:var(--gradient-accent); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+  .overlay-card .score-lbl { font-size:10px; font-weight:600; letter-spacing:1.5px; color:var(--text-secondary); margin-top:4px; }
+  .overlay-card .cta { margin-top:32px; }
+  .overlay-card .quit { font-size:15px; color:var(--text-secondary); margin-top:12px; }
+  .overlay-screen.dark-overlay .overlay-card .eyebrow { color:var(--dark-text-sec); }
+  .overlay-screen.dark-overlay .overlay-card .title { color:var(--dark-text); }
+  .overlay-screen.dark-overlay .overlay-card .score-val { background:linear-gradient(90deg, var(--dark-accent), var(--dark-accent)); -webkit-background-clip:text; }
+  .overlay-screen.dark-overlay .overlay-card .score-lbl { color:var(--dark-text-sec); }
+  .overlay-screen.dark-overlay .overlay-card .quit { color:var(--dark-text-sec); }
+
+  /* Settings */
+  .settings { background:var(--bg); min-height:790px; }
+  .settings .nav-title { font-size:34px; font-weight:800; color:var(--text-primary); padding:16px 16px 24px; }
+  .settings-card { margin:0 16px; background:var(--card); border-radius:16px; box-shadow:var(--shadow); overflow:hidden; }
+  .settings-row { display:flex; align-items:center; justify-content:space-between; padding:14px 16px; }
+  .settings-row .label { font-size:15px; color:var(--text-primary); }
+  .settings-row .toggle { width:51px; height:31px; border-radius:16px; background:var(--pink); position:relative; }
+  .settings-row .toggle .knob { width:27px; height:27px; border-radius:14px; background:#fff; position:absolute; top:2px; right:2px; box-shadow:0 1px 3px rgba(0,0,0,0.2); }
+  .settings-row .toggle.off { background:var(--divider); }
+  .settings-row .toggle.off .knob { right:auto; left:2px; }
+  .settings-divider { height:1px; background:var(--divider); margin-left:16px; }
+
+  /* Paywall */
+  .paywall { background:var(--bg); min-height:790px; }
+  .paywall .close { text-align:right; padding:16px; font-size:28px; color:var(--text-muted); }
+  .paywall .hero { text-align:center; padding:32px 24px; }
+  .paywall .hero .wordmark { font-size:34px; font-weight:800; background:var(--gradient); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+  .paywall .hero .subtitle { font-size:34px; font-weight:800; background:var(--gradient-accent); -webkit-background-clip:text; -webkit-text-fill-color:transparent; margin-top:4px; }
+  .paywall .hero .desc { font-size:15px; color:var(--text-secondary); margin-top:12px; line-height:1.5; }
+  .paywall .mode-list { margin:0 16px; background:var(--card); border-radius:16px; box-shadow:var(--shadow); }
+  .paywall .mode-item { display:flex; align-items:center; gap:14px; padding:12px 16px; }
+  .paywall .mode-item .check { color:var(--accent); font-size:18px; }
+  .paywall .mode-item .name { font-size:15px; font-weight:700; color:var(--text-primary); }
+  .paywall .mode-item .desc { font-size:13px; color:var(--text-secondary); }
+</style>
+</head>
+<body>
+
+<div class="page-title">Tumblox – Light Mode Reference</div>
+<div class="page-subtitle">22 screens · Target design for Xcode preview matching</div>
+
+<div class="screens-grid">
+
+<!-- 1. Mode Select -->
+<div class="screen-wrap">
+  <div class="screen-label">1 – Mode Select</div>
+  <div class="phone">
+    <div class="phone-inner mode-select">
+      <div class="status-bar light"><span>9:41</span><span class="status-icons">●●● ◀ 🔋</span></div>
+      <div class="header">
+        <span class="wordmark">Tumblox</span>
+        <span class="gear">⚙</span>
+      </div>
+      <div class="section-label">CHALLENGE</div>
+      <div class="challenge-hero">
+        <div class="eyebrow">CHALLENGE MODE</div>
+        <div class="level">Level 7</div>
+        <div class="subtitle">Clear 3 lines using only I and O pieces</div>
+        <div class="progress-bar"><div class="progress-fill"></div></div>
+      </div>
+      <div class="section-label">FREE MODES</div>
+      <div class="mode-row" style="border-radius:16px 16px 0 0">
+        <div class="accent-bar"></div>
+        <div class="info"><div class="name">Zen Stacking</div><div class="desc">Freeform stacking, no pressure</div></div>
+        <div class="score">18,420</div>
+      </div>
+      <div class="mode-row">
+        <div class="accent-bar"></div>
+        <div class="info"><div class="name">Precision</div><div class="desc">Earn points for center-column placements</div></div>
+        <div class="score">4,750</div>
+      </div>
+      <div class="mode-row" style="border-radius:0 0 16px 16px">
+        <div class="accent-bar"></div>
+        <div class="info"><div class="name">Sprint</div><div class="desc">Clear 40 lines as fast as possible</div></div>
+        <div class="locked">🔒</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 2. Game Setup -->
+<div class="screen-wrap">
+  <div class="screen-label">2 – Setup: Zen Stacking</div>
+  <div class="phone">
+    <div class="phone-inner game-setup">
+      <div class="status-bar light"><span>9:41</span><span class="status-icons">●●● ◀ 🔋</span></div>
+      <div class="back">SETUP</div>
+      <div class="mode-title">
+        <h1>Zen Stacking</h1>
+        <p>Freeform stacking, no pressure</p>
+      </div>
+      <div class="section-label">PACE</div>
+      <div class="pace-card">
+        <div class="pace-option">
+          <div class="bar inactive"></div>
+          <div class="text"><div class="title">Manual Drop</div><div class="sub">Piece only moves down when you swipe. No time pressure.</div></div>
+        </div>
+        <div class="pace-divider"></div>
+        <div class="pace-option">
+          <div class="bar active"></div>
+          <div class="text"><div class="title bold">Auto-Fall</div><div class="sub">Pieces descend automatically at your chosen speed.</div></div>
+        </div>
+      </div>
+      <div class="section-label">SPEED</div>
+      <div class="strip-row">
+        <div class="strip-option">Gentle</div>
+        <div class="strip-option active">Classic</div>
+        <div class="strip-option">Custom</div>
+      </div>
+      <div class="section-label">SESSION</div>
+      <div class="strip-row">
+        <div class="strip-option active">No Limit</div>
+        <div class="strip-option">5 min</div>
+        <div class="strip-option">10 min</div>
+        <div class="strip-option">15 min</div>
+        <div class="strip-option">30 min</div>
+      </div>
+      <div class="cta-button">Play →</div>
+    </div>
+  </div>
+</div>
+
+<!-- 5. Game Play (Light) -->
+<div class="screen-wrap">
+  <div class="screen-label">5 – Game Play (Light)</div>
+  <div class="phone">
+    <div class="phone-inner game-screen">
+      <div class="status-bar light"><span>9:41</span><span class="status-icons">●●● ◀ 🔋</span></div>
+      <div class="hud">
+        <div class="stat"><div class="val">14,280</div><div class="lbl">SCORE</div></div>
+        <div class="divider"></div>
+        <div class="stat"><div class="val">22,100</div><div class="lbl">BEST</div></div>
+        <div class="divider"></div>
+        <div class="stat"><div class="val">1:37</div><div class="lbl">TIME</div></div>
+        <div class="divider"></div>
+        <div class="next-piece">
+          <svg width="32" height="32" viewBox="0 0 32 32">
+            <rect x="2" y="10" width="10" height="10" rx="2" fill="var(--piece-purple)"/>
+            <rect x="12" y="10" width="10" height="10" rx="2" fill="var(--piece-purple)"/>
+            <rect x="22" y="10" width="10" height="10" rx="2" fill="var(--piece-purple)"/>
+            <rect x="12" y="0" width="10" height="10" rx="2" fill="var(--piece-purple)"/>
+          </svg>
+        </div>
+      </div>
+      <div class="board-area">
+        <div class="board">
+          <!-- Grid lines -->
+          <div class="grid-line-v" style="left:10%"></div>
+          <div class="grid-line-v" style="left:20%"></div>
+          <div class="grid-line-v" style="left:30%"></div>
+          <div class="grid-line-v" style="left:40%"></div>
+          <div class="grid-line-v" style="left:50%"></div>
+          <div class="grid-line-v" style="left:60%"></div>
+          <div class="grid-line-v" style="left:70%"></div>
+          <div class="grid-line-v" style="left:80%"></div>
+          <div class="grid-line-v" style="left:90%"></div>
+          <!-- Some pieces on the board -->
+          <div class="piece" style="left:0;bottom:0;width:28px;height:28px;background:var(--cyan);"></div>
+          <div class="piece" style="left:28px;bottom:0;width:28px;height:28px;background:var(--cyan);"></div>
+          <div class="piece" style="left:56px;bottom:0;width:28px;height:28px;background:var(--cyan);"></div>
+          <div class="piece" style="left:84px;bottom:0;width:28px;height:28px;background:var(--cyan);"></div>
+          <div class="piece" style="left:112px;bottom:0;width:28px;height:28px;background:var(--green);"></div>
+          <div class="piece" style="left:140px;bottom:0;width:28px;height:28px;background:var(--green);"></div>
+          <div class="piece" style="left:140px;bottom:28px;width:28px;height:28px;background:var(--green);"></div>
+          <div class="piece" style="left:168px;bottom:28px;width:28px;height:28px;background:var(--green);"></div>
+          <div class="piece" style="left:196px;bottom:0;width:28px;height:28px;background:var(--red);"></div>
+          <div class="piece" style="left:224px;bottom:0;width:28px;height:28px;background:var(--red);"></div>
+          <div class="piece" style="left:168px;bottom:0;width:28px;height:28px;background:var(--blue);"></div>
+          <div class="piece" style="left:252px;bottom:0;width:28px;height:28px;background:var(--piece-orange);"></div>
+          <!-- Active piece falling -->
+          <div class="piece" style="left:112px;top:168px;width:28px;height:28px;background:var(--piece-purple);"></div>
+          <div class="piece" style="left:140px;top:168px;width:28px;height:28px;background:var(--piece-purple);"></div>
+          <div class="piece" style="left:168px;top:168px;width:28px;height:28px;background:var(--piece-purple);"></div>
+          <div class="piece" style="left:140px;top:140px;width:28px;height:28px;background:var(--piece-purple);"></div>
+        </div>
+      </div>
+      <div class="control-bar">
+        <div class="btn">↩</div>
+        <div class="btn">💡</div>
+        <div class="btn">↺</div>
+        <div class="btn">↻</div>
+        <div class="btn">⏸</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 5b. Game Play (Dark) -->
+<div class="screen-wrap">
+  <div class="screen-label">5b – Game Play (Dark)</div>
+  <div class="phone">
+    <div class="phone-inner game-screen dark-game">
+      <div class="status-bar dark"><span>9:41</span><span class="status-icons">●●● ◀ 🔋</span></div>
+      <div class="hud dark-hud">
+        <div class="stat"><div class="val">14,280</div><div class="lbl">SCORE</div></div>
+        <div class="divider"></div>
+        <div class="stat"><div class="val">22,100</div><div class="lbl">BEST</div></div>
+        <div class="divider"></div>
+        <div class="stat"><div class="val">1:37</div><div class="lbl">TIME</div></div>
+        <div class="divider"></div>
+        <div class="next-piece" style="background:var(--dark-card)">
+          <svg width="32" height="32" viewBox="0 0 32 32">
+            <rect x="2" y="10" width="10" height="10" rx="2" fill="var(--piece-purple)"/>
+            <rect x="12" y="10" width="10" height="10" rx="2" fill="var(--piece-purple)"/>
+            <rect x="22" y="10" width="10" height="10" rx="2" fill="var(--piece-purple)"/>
+            <rect x="12" y="0" width="10" height="10" rx="2" fill="var(--piece-purple)"/>
+          </svg>
+        </div>
+      </div>
+      <div class="board-area">
+        <div class="board dark-board">
+          <div class="grid-line-v" style="left:10%"></div>
+          <div class="grid-line-v" style="left:20%"></div>
+          <div class="grid-line-v" style="left:30%"></div>
+          <div class="grid-line-v" style="left:40%"></div>
+          <div class="grid-line-v" style="left:50%"></div>
+          <div class="grid-line-v" style="left:60%"></div>
+          <div class="grid-line-v" style="left:70%"></div>
+          <div class="grid-line-v" style="left:80%"></div>
+          <div class="grid-line-v" style="left:90%"></div>
+          <div class="piece" style="left:0;bottom:0;width:28px;height:28px;background:var(--cyan);"></div>
+          <div class="piece" style="left:28px;bottom:0;width:28px;height:28px;background:var(--cyan);"></div>
+          <div class="piece" style="left:56px;bottom:0;width:28px;height:28px;background:var(--cyan);"></div>
+          <div class="piece" style="left:84px;bottom:0;width:28px;height:28px;background:var(--cyan);"></div>
+          <div class="piece" style="left:112px;bottom:0;width:28px;height:28px;background:var(--green);"></div>
+          <div class="piece" style="left:140px;bottom:0;width:28px;height:28px;background:var(--green);"></div>
+          <div class="piece" style="left:140px;bottom:28px;width:28px;height:28px;background:var(--green);"></div>
+          <div class="piece" style="left:168px;bottom:28px;width:28px;height:28px;background:var(--green);"></div>
+          <div class="piece" style="left:196px;bottom:0;width:28px;height:28px;background:var(--red);"></div>
+          <div class="piece" style="left:224px;bottom:0;width:28px;height:28px;background:var(--red);"></div>
+          <div class="piece" style="left:168px;bottom:0;width:28px;height:28px;background:var(--blue);"></div>
+          <div class="piece" style="left:252px;bottom:0;width:28px;height:28px;background:var(--piece-orange);"></div>
+          <div class="piece" style="left:112px;top:168px;width:28px;height:28px;background:var(--piece-purple);"></div>
+          <div class="piece" style="left:140px;top:168px;width:28px;height:28px;background:var(--piece-purple);"></div>
+          <div class="piece" style="left:168px;top:168px;width:28px;height:28px;background:var(--piece-purple);"></div>
+          <div class="piece" style="left:140px;top:140px;width:28px;height:28px;background:var(--piece-purple);"></div>
+        </div>
+      </div>
+      <div class="control-bar dark-ctrl">
+        <div class="btn">↩</div>
+        <div class="btn">💡</div>
+        <div class="btn">↺</div>
+        <div class="btn">↻</div>
+        <div class="btn">⏸</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 7. Pause -->
+<div class="screen-wrap">
+  <div class="screen-label">7 – Pause (Light)</div>
+  <div class="phone">
+    <div class="phone-inner overlay-screen">
+      <div class="overlay-card">
+        <div class="eyebrow">PAUSED</div>
+        <div class="title">Zen Stacking</div>
+        <div class="score-val">14,280</div>
+        <div class="score-lbl">CURRENT SCORE</div>
+        <div class="cta"><div class="cta-button" style="margin:0;width:280px;">Resume</div></div>
+        <div class="quit">Quit Game</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 8. Game Over -->
+<div class="screen-wrap">
+  <div class="screen-label">8 – Game Over (Light)</div>
+  <div class="phone">
+    <div class="phone-inner overlay-screen">
+      <div class="overlay-card">
+        <div class="eyebrow">GAME OVER</div>
+        <div class="title">Zen Stacking</div>
+        <div style="font-size:52px;font-weight:800;color:var(--text-primary);margin-top:24px;">18,420</div>
+        <div style="display:flex;align-items:center;justify-content:center;gap:4px;margin-top:8px;">
+          <span style="font-size:10px;font-weight:600;letter-spacing:1.5px;color:var(--text-secondary);">BEST</span>
+          <span style="font-size:13px;font-weight:600;color:var(--text-secondary);">22,100</span>
+        </div>
+        <div class="cta"><div class="cta-button" style="margin:0;width:280px;">Play Again</div></div>
+        <div style="color:var(--accent);font-size:15px;margin-top:12px;">🏆 Leaderboard</div>
+        <div class="quit">Back to Menu</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 15. Settings -->
+<div class="screen-wrap">
+  <div class="screen-label">15 – Settings (Light)</div>
+  <div class="phone">
+    <div class="phone-inner settings">
+      <div class="status-bar light"><span>9:41</span><span class="status-icons">●●● ◀ 🔋</span></div>
+      <div style="padding:12px 16px;font-size:14px;font-weight:600;color:var(--accent);">‹ Back</div>
+      <div class="nav-title">Settings</div>
+      <div class="section-label">APPEARANCE</div>
+      <div class="settings-card">
+        <div class="settings-row">
+          <span class="label">Theme</span>
+          <div style="display:flex;border:1px solid var(--divider);border-radius:8px;overflow:hidden;">
+            <span style="padding:6px 14px;font-size:13px;color:var(--text-secondary);">System</span>
+            <span style="padding:6px 14px;font-size:13px;color:var(--text-secondary);">Light</span>
+            <span style="padding:6px 14px;font-size:13px;background:var(--surface-elevated);font-weight:600;color:var(--text-primary);">Dark</span>
+          </div>
+        </div>
+      </div>
+      <div class="section-label">GAMEPLAY</div>
+      <div class="settings-card">
+        <div class="settings-row">
+          <span class="label">Ghost Piece</span>
+          <div class="toggle"><div class="knob"></div></div>
+        </div>
+        <div class="settings-divider"></div>
+        <div class="settings-row">
+          <span class="label">Show Next Piece</span>
+          <div class="toggle"><div class="knob"></div></div>
+        </div>
+      </div>
+      <div class="section-label">AUDIO & HAPTICS</div>
+      <div class="settings-card">
+        <div class="settings-row">
+          <span class="label">Sound</span>
+          <div class="toggle"><div class="knob"></div></div>
+        </div>
+        <div class="settings-divider"></div>
+        <div class="settings-row">
+          <span class="label">Haptics</span>
+          <div class="toggle"><div class="knob"></div></div>
+        </div>
+      </div>
+      <div class="section-label">FULL GAME</div>
+      <div class="settings-card">
+        <div class="settings-row">
+          <div>
+            <div style="font-size:15px;font-weight:700;background:var(--gradient-accent);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Unlock Full Game</div>
+            <div style="font-size:13px;color:var(--text-secondary);margin-top:2px;">Unlock all 10 game modes</div>
+          </div>
+          <span style="color:var(--text-muted);">›</span>
+        </div>
+      </div>
+      <div class="section-label">ACCOUNT</div>
+      <div class="settings-card">
+        <div class="settings-row"><span class="label">Restore Purchases</span><span style="color:var(--text-muted);">↻</span></div>
+        <div class="settings-divider"></div>
+        <div class="settings-row"><span class="label" style="color:var(--destructive);">Delete Account</span><span style="color:var(--text-muted);">›</span></div>
+      </div>
+      <div class="section-label">ABOUT</div>
+      <div class="settings-card">
+        <div class="settings-row"><span class="label">Version</span><span style="color:var(--text-secondary);font-size:15px;">1.0</span></div>
+        <div class="settings-divider"></div>
+        <div class="settings-row"><span class="label">Privacy Policy</span><span style="color:var(--text-muted);">↗</span></div>
+        <div class="settings-divider"></div>
+        <div class="settings-row"><span class="label">Terms of Use</span><span style="color:var(--text-muted);">↗</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 14. Paywall -->
+<div class="screen-wrap">
+  <div class="screen-label">14 – Paywall (Light)</div>
+  <div class="phone">
+    <div class="phone-inner paywall">
+      <div class="status-bar light"><span>9:41</span><span class="status-icons">●●● ◀ 🔋</span></div>
+      <div class="close">ⓧ</div>
+      <div class="hero">
+        <div class="wordmark">Tumblox</div>
+        <div class="subtitle">Full Game</div>
+        <div class="desc">Unlock every mode with one purchase.<br>No subscriptions. No ads. Ever.</div>
+      </div>
+      <div class="mode-list">
+        <div class="mode-item"><span class="check">✓</span><div><div class="name">Sprint</div><div class="desc">Clear 40 lines as fast as possible</div></div></div>
+        <div style="height:1px;background:var(--divider);margin-left:48px;"></div>
+        <div class="mode-item"><span class="check">✓</span><div><div class="name">Time Attack</div><div class="desc">Max score before the clock runs out</div></div></div>
+        <div style="height:1px;background:var(--divider);margin-left:48px;"></div>
+        <div class="mode-item"><span class="check">✓</span><div><div class="name">Survival</div><div class="desc">Speed increases every 30 seconds</div></div></div>
+        <div style="height:1px;background:var(--divider);margin-left:48px;"></div>
+        <div class="mode-item"><span class="check">✓</span><div><div class="name">Marathon</div><div class="desc">Endurance run — no time limit</div></div></div>
+        <div style="height:1px;background:var(--divider);margin-left:48px;"></div>
+        <div class="mode-item"><span class="check">✓</span><div><div class="name">Blitz</div><div class="desc">2-minute all-out scoring frenzy</div></div></div>
+      </div>
+      <div class="cta-button" style="margin-top:28px;">Unlock Full Game →</div>
+      <div style="text-align:center;font-size:15px;color:var(--text-secondary);margin-top:12px;">Restore Purchases</div>
+      <div style="text-align:center;font-size:11px;color:var(--text-muted);margin-top:12px;padding:0 40px;">One-time purchase · No subscriptions · Purchases are non-refundable</div>
+    </div>
+  </div>
+</div>
+
+</div><!-- end screens-grid -->
+
+</body>
+</html>

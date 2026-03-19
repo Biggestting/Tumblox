@@ -13,7 +13,7 @@ struct PaceSection: View {
                 } label: {
                     HStack(spacing: 0) {
                         RoundedRectangle(cornerRadius: 1.5)
-                            .fill(selected ? TumbloxGradient.accent : LinearGradient(colors: [.clear], startPoint: .leading, endPoint: .trailing))
+                            .fill(selected ? TumbloxGradient.primary : LinearGradient(colors: [.clear], startPoint: .leading, endPoint: .trailing))
                             .frame(width: TumbloxSpacing.accentBarWidth, height: TumbloxSpacing.accentBarHeight)
                         VStack(alignment: .leading, spacing: 2) {
                             Text(option.displayName)

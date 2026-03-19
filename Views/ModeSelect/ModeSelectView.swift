@@ -91,7 +91,7 @@ struct ModeSelectView: View {
             Text("FULL GAME")
                 .font(TumbloxTypography.sectionEyebrow)
                 .kerning(2.5)
-                .foregroundColor(TumbloxColors.textSecondary(colorScheme))
+                .foregroundColor(.primaryGradientMid)
                 .padding(.horizontal, TumbloxSpacing.screenHorizontal)
 
             VStack(spacing: 0) {

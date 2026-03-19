@@ -8,7 +8,7 @@ struct PreGameSectionLabel: View {
         Text(text)
             .font(TumbloxTypography.sectionEyebrow)
             .kerning(2.5)
-            .foregroundColor(TumbloxColors.textSecondary(colorScheme))
+            .foregroundColor(.primaryGradientMid)
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.horizontal, TumbloxSpacing.screenHorizontal)
     }
