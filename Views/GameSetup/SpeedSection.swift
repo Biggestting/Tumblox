@@ -23,3 +23,15 @@ struct SpeedSection: View {
         .padding(.horizontal, TumbloxSpacing.screenHorizontal)
     }
 }
+
+// MARK: - Preview
+
+#Preview("Speed Section") {
+    @Previewable @State var speed: GameConfig.AutoFallSpeed = .classic
+    return ZStack {
+        Color.black.ignoresSafeArea()
+        SpeedSection(speed: $speed)
+            .padding()
+    }
+    .preferredColorScheme(.dark)
+}

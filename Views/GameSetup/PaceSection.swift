@@ -43,3 +43,21 @@ struct PaceSection: View {
         .padding(.horizontal, TumbloxSpacing.screenHorizontal)
     }
 }
+
+// MARK: - Preview
+
+#Preview("Pace Section") {
+    @Previewable @State var pace: GameConfig.Pace = .manualDrop
+    return ZStack {
+        Color.black.ignoresSafeArea()
+        VStack(alignment: .leading, spacing: 8) {
+            Text("PACE")
+                .font(.system(size: 11, weight: .semibold))
+                .kerning(2)
+                .foregroundColor(.gray)
+                .padding(.leading, 16)
+            PaceSection(pace: $pace)
+        }
+    }
+    .preferredColorScheme(.dark)
+}

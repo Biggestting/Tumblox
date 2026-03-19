@@ -282,3 +282,23 @@ struct SettingsView: View {
         Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0"
     }
 }
+
+// MARK: - Preview
+
+#Preview("Settings – Dark") {
+    NavigationStack {
+        PreviewHost {
+            SettingsView()
+        }
+    }
+    .preferredColorScheme(.dark)
+}
+
+#Preview("Settings – Light") {
+    NavigationStack {
+        PreviewHost {
+            SettingsView()
+        }
+    }
+    .preferredColorScheme(.light)
+}

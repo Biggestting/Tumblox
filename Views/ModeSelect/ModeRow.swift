@@ -68,3 +68,26 @@ struct ModeRow: View {
         return parts.joined(separator: ". ")
     }
 }
+
+// MARK: - Preview
+
+#Preview("Mode Rows") {
+    let zenMode       = GameMode.mode(for: .zenStacking)
+    let precisionMode = GameMode.mode(for: .precision)
+    let blitzMode     = GameMode.mode(for: .blitz)
+
+    return ZStack {
+        Color.black.ignoresSafeArea()
+        VStack(spacing: 0) {
+            ModeRow(mode: zenMode,       isActive: true,  isLocked: false, personalBest: 18_420) {}
+            Divider()
+            ModeRow(mode: precisionMode, isActive: false, isLocked: false, personalBest: nil)    {}
+            Divider()
+            ModeRow(mode: blitzMode,     isActive: false, isLocked: true,  personalBest: nil)    {}
+        }
+        .background(Color(hex: "#111111"))
+        .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
+        .padding()
+    }
+    .preferredColorScheme(.dark)
+}

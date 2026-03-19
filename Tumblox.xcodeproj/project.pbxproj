@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		165B7868F6C54C5079F4E786 /* Tumblox.xcodeproj in Resources */ = {isa = PBXBuildFile; fileRef = "TEMP_42D43B11-A633-406A-96FC-D99830C5CB6A" /* Tumblox.xcodeproj */; };
 		168CC020118B62273639855D /* TumbloxSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0560E53BAF280F1C336B995B /* TumbloxSpacing.swift */; };
 		174DC20116808DD99D4986CF /* UserProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FACD4A444BB9538CE3DA3FE /* UserProgress.swift */; };
 		1A0BA79326BCCD8DBA035BF9 /* GameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B40B7B996489F57967FCD9 /* GameOverView.swift */; };
@@ -16,24 +17,24 @@
 		23960EF98BD8B9ED2A7E3AB2 /* PauseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BBB043B38713A3F06E9572 /* PauseView.swift */; };
 		2E6189651F5092812EE99C2B /* AppRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB371FDEFC1BB0D847729457 /* AppRoute.swift */; };
 		33370C0AF71AE58135F88CCE /* GameCenterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FA6D26130269E285B6760C /* GameCenterService.swift */; };
+		34592CF28074E6CD8E3D348E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = "TEMP_0FFC8221-E852-43D7-BE43-480F5EDF0B4C" /* Assets.xcassets */; };
 		34BF7B4FCD21A33993CA2127 /* NextPieceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E014DB450D6DEA872EA72A /* NextPieceView.swift */; };
 		366960857FE006A86E74221E /* GameSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023071F8BDD748863317B987 /* GameSetupView.swift */; };
 		39F49A08F23DFB0377967149 /* ChallengeEvaluator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8128294D9BC7CD2CB2779339 /* ChallengeEvaluator.swift */; };
 		48C348998AE3E33AF9E2A33A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAE099B27BCEDD6A9CBC315C /* StoreKit.framework */; };
 		4F1196AE6DDDC28CDCD11079 /* StripOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B2490252C5A0CEB1193325 /* StripOption.swift */; };
 		59B67440E48F1DF5DDBACCEF /* ChallengeLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F13F1F2312F32164D24DAF /* ChallengeLevel.swift */; };
-		59D41E4DF414E2FAA7C4F654 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = "TEMP_BB51300F-E49C-44BA-AE00-6398CB8A649C" /* ContentView.swift */; };
-		5B98514D702511443669B6BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = "TEMP_C013FF22-0CFB-4F69-A5D8-294C0A808903" /* Assets.xcassets */; };
 		5CEDF28AE31F976CF7360686 /* ChallengeHeroCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8FB7DD5596EC4824BBD985 /* ChallengeHeroCard.swift */; };
 		5CF71022C6557B355832F8D2 /* UserProgressService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90E53FF28684E146BB0467F /* UserProgressService.swift */; };
 		6534C66ECA7F34E33F3F8FB4 /* ModeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B4B1C79C9CE6BEF274A23E /* ModeRow.swift */; };
+		6A336CADBFA43278A0F688EA /* TumbloxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = "TEMP_9DFA3B22-1FDA-4AFE-B8C2-C31ABF275F7A" /* TumbloxApp.swift */; };
 		6A6D037776EC2C0A4DA49F19 /* SpeedSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF841DE6F57AF4DB3EA77060 /* SpeedSection.swift */; };
 		6AA68990AEB8BDC2BA130138 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE36CB776F4086C3654D5F8 /* SettingsView.swift */; };
 		6B364822AAD83FD1445EC31B /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F705562370EF15FFA6BF57D /* GameKit.framework */; };
 		888C2D26ED46F1BA0F15B816 /* GameMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDCAC0896E225B685E343A0 /* GameMode.swift */; };
+		896B9339F2C8D82163172A01 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = "TEMP_3DDCECDE-848C-41F0-B6BD-725A9EBEB7C6" /* ContentView.swift */; };
 		91289A4FE6B0A1F87013A39C /* GameHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB74C1E78816CB5C5F6A6D5 /* GameHUD.swift */; };
 		95A1940690640ED26C5CF398 /* DeleteAccountSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B1B3AED8292C1E097A935 /* DeleteAccountSheet.swift */; };
-		9A41FBFB535963A89BCF7643 /* TumbloxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = "TEMP_591DF0EA-058C-4574-B291-774A84CD6C90" /* TumbloxApp.swift */; };
 		9A80750DBA1D37FA2F0AF3BC /* Tetromino.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0531A7C3F83A6974FD00B544 /* Tetromino.swift */; };
 		9C28169DFD4EF7B68D7517EE /* GameEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594ED69CD90B74212DC614F8 /* GameEngine.swift */; };
 		9DABBEDD337F0B75EE8C9AE8 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF16980302FA1E04AA3867F9 /* AppState.swift */; };
@@ -45,6 +46,7 @@
 		BE980ED53A64F2D302849804 /* TumbloxPrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C363A5FFC3DFB0C48C1A737 /* TumbloxPrimaryButton.swift */; };
 		BE9A824D366E1A1D354D9B20 /* GameCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4BF2AB08C2C545BFB33191 /* GameCanvas.swift */; };
 		BF00B29EDA44622C349A3046 /* HapticService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB781EEFAFFA40361DD7F9D /* HapticService.swift */; };
+		BF52E963C8E931A7D07EB017 /* PreviewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36822D766DE4A1DC835DF5F3 /* PreviewHelpers.swift */; };
 		C0DF5CB38906BCA85B12A342 /* ControlBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550A168509B3A4638D1503D7 /* ControlBar.swift */; };
 		CCB29FB2A3914A581DD74D4D /* TumbloxTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = E944AB681E5C792B61E0D0A0 /* TumbloxTypography.swift */; };
 		CF3262F0A2742A0739029438 /* SessionSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4014E85C0F08A3D6492F10EB /* SessionSection.swift */; };
@@ -68,6 +70,7 @@
 		1EB74C1E78816CB5C5F6A6D5 /* GameHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHUD.swift; sourceTree = "<group>"; };
 		302B6C3B9D2932BA84731DF1 /* EntitlementManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntitlementManager.swift; sourceTree = "<group>"; };
 		30FA6D26130269E285B6760C /* GameCenterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCenterService.swift; sourceTree = "<group>"; };
+		36822D766DE4A1DC835DF5F3 /* PreviewHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewHelpers.swift; sourceTree = "<group>"; };
 		3FACD4A444BB9538CE3DA3FE /* UserProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProgress.swift; sourceTree = "<group>"; };
 		4014E85C0F08A3D6492F10EB /* SessionSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionSection.swift; sourceTree = "<group>"; };
 		47E1FF118FD30258226F7C90 /* HintEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintEngine.swift; sourceTree = "<group>"; };
@@ -90,7 +93,7 @@
 		A721CD93E027421BB3DF30FD /* GameConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameConfig.swift; sourceTree = "<group>"; };
 		AAE099B27BCEDD6A9CBC315C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		B84BB6B87BB5948A1C57578E /* PaceSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaceSection.swift; sourceTree = "<group>"; };
-		BD62CE72041D375B3A0BEECC /* Tumblox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tumblox.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD62CE72041D375B3A0BEECC /* Tumblox.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Tumblox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEE36CB776F4086C3654D5F8 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		BF16980302FA1E04AA3867F9 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		CB371FDEFC1BB0D847729457 /* AppRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRoute.swift; sourceTree = "<group>"; };
@@ -103,9 +106,10 @@
 		E944AB681E5C792B61E0D0A0 /* TumbloxTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TumbloxTypography.swift; sourceTree = "<group>"; };
 		EF841DE6F57AF4DB3EA77060 /* SpeedSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedSection.swift; sourceTree = "<group>"; };
 		F1BBB043B38713A3F06E9572 /* PauseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseView.swift; sourceTree = "<group>"; };
-		"TEMP_591DF0EA-058C-4574-B291-774A84CD6C90" /* TumbloxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TumbloxApp.swift; sourceTree = "<group>"; };
-		"TEMP_BB51300F-E49C-44BA-AE00-6398CB8A649C" /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		"TEMP_C013FF22-0CFB-4F69-A5D8-294C0A808903" /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		"TEMP_0FFC8221-E852-43D7-BE43-480F5EDF0B4C" /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		"TEMP_3DDCECDE-848C-41F0-B6BD-725A9EBEB7C6" /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		"TEMP_42D43B11-A633-406A-96FC-D99830C5CB6A" /* Tumblox.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Tumblox.xcodeproj; sourceTree = "<group>"; };
+		"TEMP_9DFA3B22-1FDA-4AFE-B8C2-C31ABF275F7A" /* TumbloxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TumbloxApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +161,7 @@
 				0D87787D29A9879B5718A58E /* Engine */,
 				02CA6B106E53098A1BD406DB /* Models */,
 				034BB23199FFF200B39183F3 /* Navigation */,
+				B8CEEE7EF08D2A294EE33BB0 /* Previews */,
 				E288DF021A405B48B2A558D6 /* Services */,
 				C7DA90D9FDC8629F58BDB102 /* State */,
 				F5AC54962FB8B29898D47B8E /* SupportingFiles */,
@@ -164,7 +169,7 @@
 				CDEEB9C6BD27F8626E791A22 /* Views */,
 				6BA37876B8EF0DEF05F7BBB5 /* Frameworks */,
 				5583701FC74C52F0A1ED7045 /* Products */,
-				96C9A36B2F6C63E900B4F9F8 /* Recovered References */,
+				96C9A36C2F6C7F4100B4F9F8 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -218,14 +223,28 @@
 			path = GameSetup;
 			sourceTree = "<group>";
 		};
-		96C9A36B2F6C63E900B4F9F8 /* Recovered References */ = {
+		96C9A36C2F6C7F4100B4F9F8 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
-				"TEMP_BB51300F-E49C-44BA-AE00-6398CB8A649C" /* ContentView.swift */,
-				"TEMP_591DF0EA-058C-4574-B291-774A84CD6C90" /* TumbloxApp.swift */,
-				"TEMP_C013FF22-0CFB-4F69-A5D8-294C0A808903" /* Assets.xcassets */,
+				"TEMP_3DDCECDE-848C-41F0-B6BD-725A9EBEB7C6" /* ContentView.swift */,
+				"TEMP_9DFA3B22-1FDA-4AFE-B8C2-C31ABF275F7A" /* TumbloxApp.swift */,
+				"TEMP_0FFC8221-E852-43D7-BE43-480F5EDF0B4C" /* Assets.xcassets */,
+				"TEMP_42D43B11-A633-406A-96FC-D99830C5CB6A" /* Tumblox.xcodeproj */,
 			);
 			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		96C9A36D2F6C7F4100B4F9F8 /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B8CEEE7EF08D2A294EE33BB0 /* Previews */ = {
+			isa = PBXGroup;
+			children = (
+				36822D766DE4A1DC835DF5F3 /* PreviewHelpers.swift */,
+			);
+			path = Previews;
 			sourceTree = "<group>";
 		};
 		C7DA90D9FDC8629F58BDB102 /* State */ = {
@@ -344,6 +363,7 @@
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					16B6B6445894D6D9530D72D5 = {
+						DevelopmentTeam = "";
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -359,6 +379,12 @@
 			mainGroup = 372677C3C58CD306112D0046;
 			minimizedProjectReferenceProxies = 1;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 96C9A36D2F6C7F4100B4F9F8 /* Products */;
+					ProjectRef = "TEMP_42D43B11-A633-406A-96FC-D99830C5CB6A" /* Tumblox.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				16B6B6445894D6D9530D72D5 /* Tumblox */,
@@ -371,8 +397,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B98514D702511443669B6BB /* Assets.xcassets in Resources */,
+				34592CF28074E6CD8E3D348E /* Assets.xcassets in Resources */,
 				BDBA58E180668FDF125E84B0 /* PrivacyInfo.xcprivacy in Resources */,
+				165B7868F6C54C5079F4E786 /* Tumblox.xcodeproj in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,7 +416,7 @@
 				5CEDF28AE31F976CF7360686 /* ChallengeHeroCard.swift in Sources */,
 				59B67440E48F1DF5DDBACCEF /* ChallengeLevel.swift in Sources */,
 				1D28CF19F138A6BA43D02C13 /* ChallengeSummaryView.swift in Sources */,
-				59D41E4DF414E2FAA7C4F654 /* ContentView.swift in Sources */,
+				896B9339F2C8D82163172A01 /* ContentView.swift in Sources */,
 				C0DF5CB38906BCA85B12A342 /* ControlBar.swift in Sources */,
 				95A1940690640ED26C5CF398 /* DeleteAccountSheet.swift in Sources */,
 				9F4F1DA29D91326AA884FFFF /* EntitlementManager.swift in Sources */,
@@ -412,12 +439,13 @@
 				23960EF98BD8B9ED2A7E3AB2 /* PauseView.swift in Sources */,
 				D24A86958C3E9D78B64F3B05 /* PaywallView.swift in Sources */,
 				D1C4903FE3138536C838AEC9 /* PreGameSectionLabel.swift in Sources */,
+				BF52E963C8E931A7D07EB017 /* PreviewHelpers.swift in Sources */,
 				CF3262F0A2742A0739029438 /* SessionSection.swift in Sources */,
 				6AA68990AEB8BDC2BA130138 /* SettingsView.swift in Sources */,
 				6A6D037776EC2C0A4DA49F19 /* SpeedSection.swift in Sources */,
 				4F1196AE6DDDC28CDCD11079 /* StripOption.swift in Sources */,
 				9A80750DBA1D37FA2F0AF3BC /* Tetromino.swift in Sources */,
-				9A41FBFB535963A89BCF7643 /* TumbloxApp.swift in Sources */,
+				6A336CADBFA43278A0F688EA /* TumbloxApp.swift in Sources */,
 				F9CF79D03237E9347872EF37 /* TumbloxColors.swift in Sources */,
 				BE980ED53A64F2D302849804 /* TumbloxPrimaryButton.swift in Sources */,
 				168CC020118B62273639855D /* TumbloxSpacing.swift in Sources */,
@@ -506,7 +534,6 @@
 				CODE_SIGN_ENTITLEMENTS = SupportingFiles/Tumblox.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = 93H6PRZP38;
 				INFOPLIST_FILE = SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -527,7 +554,6 @@
 				CODE_SIGN_ENTITLEMENTS = SupportingFiles/Tumblox.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 93H6PRZP38;
 				INFOPLIST_FILE = SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -115,3 +115,23 @@ struct ModeSelectView: View {
         }
     }
 }
+
+// MARK: - Preview
+
+#Preview("Dark") {
+    NavigationStack {
+        PreviewHost {
+            ModeSelectView()
+        }
+    }
+    .preferredColorScheme(.dark)
+}
+
+#Preview("Light") {
+    NavigationStack {
+        PreviewHost {
+            ModeSelectView()
+        }
+    }
+    .preferredColorScheme(.light)
+}

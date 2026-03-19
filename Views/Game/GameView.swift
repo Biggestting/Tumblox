@@ -54,6 +54,7 @@ struct GameView: View {
                     nextPiece: config.modifiers.showNextPiece ? engine.nextPiece : nil,
                     showNextPiece: config.modifiers.showNextPiece
                 )
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .gesture(swipeGesture(engine: engine))
                 .onTapGesture {
                     if config.pace == .manualDrop {
@@ -64,8 +65,6 @@ struct GameView: View {
                 }
                 .padding(.horizontal, TumbloxSpacing.screenHorizontal)
                 .padding(.vertical, 8)
-
-                Spacer()
 
                 ControlBar(
                     onUndo:        { engine.undo() },

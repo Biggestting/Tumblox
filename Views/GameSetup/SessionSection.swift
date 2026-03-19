@@ -23,3 +23,15 @@ struct SessionSection: View {
         .padding(.horizontal, TumbloxSpacing.screenHorizontal)
     }
 }
+
+// MARK: - Preview
+
+#Preview("Session Section") {
+    @Previewable @State var duration: GameConfig.SessionDuration = .minutes(5)
+    return ZStack {
+        Color.black.ignoresSafeArea()
+        SessionSection(duration: $duration)
+            .padding()
+    }
+    .preferredColorScheme(.dark)
+}

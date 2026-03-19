@@ -113,3 +113,32 @@ private struct BackButton: View {
         }
     }
 }
+
+// MARK: - Preview
+
+#Preview("Zen Stacking – Dark") {
+    NavigationStack {
+        PreviewHost {
+            GameSetupView(modeID: .zenStacking)
+        }
+    }
+    .preferredColorScheme(.dark)
+}
+
+#Preview("Challenge – Dark") {
+    NavigationStack {
+        PreviewHost {
+            GameSetupView(modeID: .challenge)
+        }
+    }
+    .preferredColorScheme(.dark)
+}
+
+#Preview("Zen Stacking – Light") {
+    NavigationStack {
+        PreviewHost {
+            GameSetupView(modeID: .zenStacking)
+        }
+    }
+    .preferredColorScheme(.light)
+}

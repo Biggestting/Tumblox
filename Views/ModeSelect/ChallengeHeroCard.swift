@@ -55,3 +55,14 @@ struct ChallengeHeroCard: View {
         .padding(.horizontal, TumbloxSpacing.screenHorizontal)
     }
 }
+
+// MARK: - Preview
+
+#Preview("Challenge Hero Card") {
+    ZStack {
+        Color.black.ignoresSafeArea()
+        ChallengeHeroCard(currentLevel: 7, totalLevels: 31, progress: 0.22)
+            .padding(.vertical, 24)
+    }
+    .preferredColorScheme(.dark)
+}

@@ -53,3 +53,17 @@ struct PauseView: View {
         }
     }
 }
+
+// MARK: - Preview
+
+#Preview("Pause View") {
+    PreviewHost {
+        PauseView(
+            modeName: "Zen Stacking",
+            score: 14_280,
+            onResume: {},
+            onQuit: {}
+        )
+    }
+    .preferredColorScheme(.dark)
+}

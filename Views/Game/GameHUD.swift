@@ -60,3 +60,29 @@ struct GameHUD: View {
         return String(format: "%d:%02d", m, s)
     }
 }
+
+// MARK: - Preview
+
+#Preview("HUD – Dark") {
+    GameHUD(
+        score: 14_280,
+        personalBest: 22_100,
+        elapsedSeconds: 97,
+        sessionDuration: .minutes(5),
+        modeName: "Zen Stacking",
+        nextPiece: nil
+    )
+    .preferredColorScheme(.dark)
+}
+
+#Preview("HUD – Light") {
+    GameHUD(
+        score: 9_400,
+        personalBest: 22_100,
+        elapsedSeconds: 45,
+        sessionDuration: .unlimited,
+        modeName: "Blitz",
+        nextPiece: nil
+    )
+    .preferredColorScheme(.light)
+}

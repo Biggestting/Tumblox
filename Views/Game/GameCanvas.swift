@@ -15,12 +15,18 @@ struct GameCanvas: View {
 
     var body: some View {
         GeometryReader { geo in
-            let tileSize = geo.size.width / CGFloat(GameEngine.columns)
-            let totalHeight = tileSize * CGFloat(GameEngine.rows)
+            // Fit the board within available space, preserving 10:20 aspect ratio
+            let tileFromWidth  = geo.size.width  / CGFloat(GameEngine.columns)
+            let tileFromHeight = geo.size.height / CGFloat(GameEngine.rows)
+            let tileSize       = min(tileFromWidth, tileFromHeight)
+            let boardWidth     = tileSize * CGFloat(GameEngine.columns)
+            let boardHeight    = tileSize * CGFloat(GameEngine.rows)
+            let offsetX        = (geo.size.width  - boardWidth)  / 2
+            let offsetY        = (geo.size.height - boardHeight) / 2
 
             ZStack(alignment: .topLeading) {
                 // Background grid lines
-                gridLines(tileSize: tileSize, totalHeight: totalHeight)
+                gridLines(tileSize: tileSize, totalHeight: boardHeight)
 
                 // Locked tiles
                 lockedTiles(tileSize: tileSize)
@@ -34,9 +40,10 @@ struct GameCanvas: View {
                 // Active piece
                 activeTiles(tileSize: tileSize)
             }
-            .frame(width: geo.size.width, height: totalHeight)
+            .frame(width: boardWidth, height: boardHeight)
             .background(colorScheme == .dark ? Color(hex: "#080808") : Color(hex: "#F2F2F2"))
             .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
+            .offset(x: offsetX, y: max(0, offsetY))
             .accessibilityElement(children: .ignore)
             .accessibilityLabel("Game board")
             .accessibilityHint("Swipe left or right to move. Swipe down to drop. Tap to rotate.")
