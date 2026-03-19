@@ -62,10 +62,10 @@ import SwiftUI
 
 #Preview("6 – Control Bar") {
     ControlBar(
-        onUndo: {},
+        onReturn: {},
         onHint: {},
-        onRotateLeft: {},
-        onRotateRight: {},
+        onZoomOut: {},
+        onZoomIn: {},
         onPause: {}
     )
     .preferredColorScheme(.light)
