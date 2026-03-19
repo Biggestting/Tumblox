@@ -60,7 +60,7 @@ private struct PaceSectionPreview: View {
                 Text("PACE")
                     .font(.system(size: 11, weight: .semibold))
                     .kerning(2)
-                    .foregroundColor(.gray)
+                    .foregroundColor(TumbloxColors.textMuted(.dark))
                     .padding(.leading, 16)
                 PaceSection(pace: $pace)
             }

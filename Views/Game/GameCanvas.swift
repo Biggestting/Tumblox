@@ -158,7 +158,7 @@ struct GameCanvas: View {
         let inset: CGFloat = 1.5
         return RoundedRectangle(cornerRadius: borderRadius, style: .continuous)
             .strokeBorder(
-                (activePiece.map { color(for: $0.shape.color) } ?? .gray).opacity(0.35),
+                (activePiece.map { color(for: $0.shape.color) } ?? TumbloxColors.textMuted(colorScheme)).opacity(0.35),
                 lineWidth: 1.5
             )
             .frame(width: tileSize - inset * 2, height: tileSize - inset * 2)

@@ -111,7 +111,7 @@ struct ChallengeSummaryView: View {
                 }
                 .padding(TumbloxSpacing.cardPadding * 1.5)
                 .background(TumbloxColors.card(colorScheme))
-                .clipShape(RoundedRectangle(cornerRadius: 28, style: .continuous))
+                .clipShape(RoundedRectangle(cornerRadius: DS.radiusHero, style: .continuous))
                 .padding(.horizontal, TumbloxSpacing.screenHorizontal)
                 .shadow(color: .black.opacity(0.2), radius: 24, y: 8)
 

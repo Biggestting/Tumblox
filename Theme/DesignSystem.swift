@@ -65,7 +65,8 @@ enum DesignSystem {
     static let radiusSM:  CGFloat = 8
     static let radiusMD:  CGFloat = 12
     static let radiusLG:  CGFloat = 16
-    static let radiusXL:  CGFloat = 20
+    static let radiusXL:   CGFloat = 20
+    static let radiusHero: CGFloat = 28
 
     // MARK: Card Shadow (light mode only)
     static let shadowColor   = Color.black.opacity(0.04)

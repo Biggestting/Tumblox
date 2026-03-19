@@ -37,7 +37,7 @@ private struct SessionSectionPreview: View {
         ZStack {
             Color.black.ignoresSafeArea()
             SessionSection(duration: $duration)
-                .padding()
+                .padding(TumbloxSpacing.screenHorizontal)
         }
         .preferredColorScheme(.dark)
     }

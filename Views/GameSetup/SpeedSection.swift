@@ -37,7 +37,7 @@ private struct SpeedSectionPreview: View {
         ZStack {
             Color.black.ignoresSafeArea()
             SpeedSection(speed: $speed)
-                .padding()
+                .padding(TumbloxSpacing.screenHorizontal)
         }
         .preferredColorScheme(.dark)
     }

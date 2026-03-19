@@ -39,7 +39,7 @@ struct DeleteAccountSheet: View {
                 }
                 .padding(14)
                 .background(TumbloxColors.destructive.opacity(0.08))
-                .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                .clipShape(RoundedRectangle(cornerRadius: DS.radiusMD, style: .continuous))
 
                 // Actions
                 VStack(spacing: 10) {
