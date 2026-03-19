@@ -56,6 +56,7 @@
 		EBDE7738195772D01D4B7E30 /* HintEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E1FF118FD30258226F7C90 /* HintEngine.swift */; };
 		F2CC0EF08FDE39FFE5429FE2 /* UserSettings+ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE9B409171C588F1E4FD7E8 /* UserSettings+ColorScheme.swift */; };
 		F9CF79D03237E9347872EF37 /* TumbloxColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CB13872B0103E10EE2C24C /* TumbloxColors.swift */; };
+		A1B2C3D4E5F60718293A4B5C /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F07182930A1B2 /* DesignSystem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -99,6 +100,7 @@
 		CB371FDEFC1BB0D847729457 /* AppRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRoute.swift; sourceTree = "<group>"; };
 		CF4BF2AB08C2C545BFB33191 /* GameCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCanvas.swift; sourceTree = "<group>"; };
 		D0CB13872B0103E10EE2C24C /* TumbloxColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TumbloxColors.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F07182930A1B2 /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
 		D7E014DB450D6DEA872EA72A /* NextPieceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextPieceView.swift; sourceTree = "<group>"; };
 		D90E53FF28684E146BB0467F /* UserProgressService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProgressService.swift; sourceTree = "<group>"; };
 		DA28E1EC4BC2245CA503A72C /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallView.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 		55BBAA291A878133FA6964EB /* Theme */ = {
 			isa = PBXGroup;
 			children = (
+				1A2B3C4D5E6F07182930A1B2 /* DesignSystem.swift */,
 				D0CB13872B0103E10EE2C24C /* TumbloxColors.swift */,
 				0560E53BAF280F1C336B995B /* TumbloxSpacing.swift */,
 				E944AB681E5C792B61E0D0A0 /* TumbloxTypography.swift */,
@@ -446,6 +449,7 @@
 				4F1196AE6DDDC28CDCD11079 /* StripOption.swift in Sources */,
 				9A80750DBA1D37FA2F0AF3BC /* Tetromino.swift in Sources */,
 				6A336CADBFA43278A0F688EA /* TumbloxApp.swift in Sources */,
+				A1B2C3D4E5F60718293A4B5C /* DesignSystem.swift in Sources */,
 				F9CF79D03237E9347872EF37 /* TumbloxColors.swift in Sources */,
 				BE980ED53A64F2D302849804 /* TumbloxPrimaryButton.swift in Sources */,
 				168CC020118B62273639855D /* TumbloxSpacing.swift in Sources */,
