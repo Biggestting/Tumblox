@@ -36,7 +36,7 @@ struct ChallengeHeroCard: View {
                         .fill(TumbloxColors.divider(colorScheme))
                         .frame(height: 4)
                     RoundedRectangle(cornerRadius: 2)
-                        .fill(TumbloxColors.goldProgress)
+                        .fill(TumbloxGradient.primary)
                         .frame(width: geo.size.width * progress, height: 4)
                 }
             }
@@ -52,6 +52,11 @@ struct ChallengeHeroCard: View {
         .padding(TumbloxSpacing.cardPadding)
         .background(TumbloxColors.card(colorScheme))
         .clipShape(RoundedRectangle(cornerRadius: TumbloxSpacing.heroRadius, style: .continuous))
+        .shadow(
+            color: colorScheme == .light ? DS.shadowColor : .clear,
+            radius: DS.shadowRadius,
+            y: DS.shadowY
+        )
         .padding(.horizontal, TumbloxSpacing.screenHorizontal)
     }
 }

@@ -20,8 +20,13 @@ struct TumbloxPrimaryButton: View {
             .foregroundColor(.white)
             .frame(maxWidth: .infinity)
             .frame(height: 54)
-            .background(TumbloxColors.primaryCTA(colorScheme))
+            .background(TumbloxColors.brandGradient)
             .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
+            .shadow(
+                color: DS.ctaShadowColor,
+                radius: DS.ctaShadowRadius,
+                y: DS.ctaShadowY
+            )
         }
     }
 }

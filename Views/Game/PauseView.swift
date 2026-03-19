@@ -10,10 +10,15 @@ struct PauseView: View {
 
     var body: some View {
         ZStack {
-            // Blur overlay
+            // Blur overlay with branded tint
             Rectangle()
                 .fill(.ultraThinMaterial)
                 .ignoresSafeArea()
+            if colorScheme == .light {
+                TumbloxGradient.vertical
+                    .opacity(0.06)
+                    .ignoresSafeArea()
+            }
 
             VStack(spacing: 32) {
                 // Mode info

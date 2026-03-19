@@ -13,23 +13,23 @@ enum TumbloxColors {
     // MARK: - Adaptive helpers
 
     static func background(_ scheme: ColorScheme) -> Color {
-        scheme == .dark ? Color.black : Color(hex: "#F7F7F7")
+        scheme == .dark ? Color.black : .backgroundPrimary
     }
 
     static func card(_ scheme: ColorScheme) -> Color {
-        scheme == .dark ? Color(hex: "#111111") : Color.white
+        scheme == .dark ? Color(hex: "#111111") : .cardBackground
     }
 
     static func textPrimary(_ scheme: ColorScheme) -> Color {
-        scheme == .dark ? Color.white : Color(hex: "#0A0A0A")
+        scheme == .dark ? Color.white : .textPrimaryLight
     }
 
     static func textSecondary(_ scheme: ColorScheme) -> Color {
-        scheme == .dark ? Color(white: 1, opacity: 0.55) : Color(white: 0, opacity: 0.45)
+        scheme == .dark ? Color(white: 1, opacity: 0.55) : .textSecondaryLight
     }
 
     static func textMuted(_ scheme: ColorScheme) -> Color {
-        scheme == .dark ? Color(white: 1, opacity: 0.30) : Color(white: 0, opacity: 0.30)
+        scheme == .dark ? Color(white: 1, opacity: 0.30) : .textMutedLight
     }
 
     static func primaryCTA(_ scheme: ColorScheme) -> Color {
@@ -37,19 +37,25 @@ enum TumbloxColors {
     }
 
     static func divider(_ scheme: ColorScheme) -> Color {
-        scheme == .dark ? Color(white: 1, opacity: 0.08) : Color(white: 0, opacity: 0.08)
+        scheme == .dark ? Color(white: 1, opacity: 0.08) : .dividerLight
     }
 
     static func hudBackground(_ scheme: ColorScheme) -> Color {
-        scheme == .dark ? Color(hex: "#0D0D0D") : Color(hex: "#EFEFEF")
+        scheme == .dark ? Color(hex: "#0D0D0D") : .surfaceElevated
     }
 
     static func controlBar(_ scheme: ColorScheme) -> Color {
-        scheme == .dark ? Color(hex: "#1A1A1A") : Color(hex: "#E8E8E8")
+        scheme == .dark ? Color(hex: "#1A1A1A") : .surfaceElevated
     }
 
     static func controlIcon(_ scheme: ColorScheme) -> Color {
-        scheme == .dark ? Color.white : Color(hex: "#0A0A0A")
+        scheme == .dark ? Color.white : .textPrimaryLight
+    }
+
+    // MARK: - Brand gradient
+
+    static var brandGradient: LinearGradient {
+        TumbloxGradient.primary
     }
 }
 

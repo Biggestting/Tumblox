@@ -20,6 +20,11 @@ struct SpeedSection: View {
         }
         .background(TumbloxColors.card(colorScheme))
         .clipShape(RoundedRectangle(cornerRadius: TumbloxSpacing.cardRadius, style: .continuous))
+        .shadow(
+            color: colorScheme == .light ? DS.shadowColor : .clear,
+            radius: DS.shadowRadius,
+            y: DS.shadowY
+        )
         .padding(.horizontal, TumbloxSpacing.screenHorizontal)
     }
 }

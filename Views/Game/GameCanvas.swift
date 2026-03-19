@@ -41,7 +41,7 @@ struct GameCanvas: View {
                 activeTiles(tileSize: tileSize)
             }
             .frame(width: boardWidth, height: boardHeight)
-            .background(colorScheme == .dark ? Color(hex: "#080808") : Color(hex: "#F2F2F2"))
+            .background(colorScheme == .dark ? Color(hex: "#080808") : .boardSurface)
             .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
             .offset(x: offsetX, y: max(0, offsetY))
             .accessibilityElement(children: .ignore)
