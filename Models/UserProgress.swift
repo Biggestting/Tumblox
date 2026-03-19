@@ -17,7 +17,7 @@ struct UserSettings: Codable {
         }
     }
 
-    var theme: AppTheme = .system
+    var theme: AppTheme = .dark
     var preferredAutoFallSpeed: GameConfig.AutoFallSpeed = .classic
     var soundEnabled: Bool = true
     var hapticsEnabled: Bool = true

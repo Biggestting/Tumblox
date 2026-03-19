@@ -55,14 +55,10 @@ struct GameView: View {
                     showNextPiece: config.modifiers.showNextPiece
                 )
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .gesture(swipeGesture(engine: engine))
-                .onTapGesture {
-                    if config.pace == .manualDrop {
-                        engine.manualTap()
-                    } else {
-                        engine.rotate(clockwise: true)
-                    }
-                }
+                // Single unified gesture: DragGesture(minimumDistance:0) classifies
+                // tap vs swipe by total travel distance, eliminating the conflict
+                // between a separate DragGesture and onTapGesture competing for events.
+                .gesture(boardGesture(engine: engine, config: config))
                 .padding(.horizontal, TumbloxSpacing.screenHorizontal)
                 .padding(.vertical, 8)
 
@@ -178,15 +174,38 @@ struct GameView: View {
         return Set(hint.cells.map { "\($0.col),\($0.row)" })
     }
 
-    private func swipeGesture(engine: GameEngine) -> some Gesture {
-        DragGesture(minimumDistance: 10)
+    /// Unified board gesture — eliminates the SwiftUI conflict between a competing
+    /// DragGesture and onTapGesture. A single DragGesture(minimumDistance:0) fires
+    /// for both taps and swipes; we classify by total travel distance.
+    private func boardGesture(engine: GameEngine, config: GameConfig) -> some Gesture {
+        DragGesture(minimumDistance: 0, coordinateSpace: .local)
             .onEnded { value in
                 let h = value.translation.width
                 let v = value.translation.height
+                let distance = sqrt(h * h + v * v)
+
+                // Tap: distance < 12pt → rotate (or manual drop in manualDrop pace)
+                if distance < 12 {
+                    if config.pace == .manualDrop {
+                        engine.manualTap()
+                    } else {
+                        engine.rotate(clockwise: true)
+                        HapticService.shared.rotate()
+                    }
+                    return
+                }
+
+                // Swipe: classify by dominant axis
                 if abs(h) > abs(v) {
+                    // Horizontal swipe → move
                     if h > 0 { engine.moveRight() } else { engine.moveLeft() }
                 } else if v > 0 {
+                    // Swipe down → hard drop
                     engine.hardDrop()
+                } else {
+                    // Swipe up → rotate clockwise (standard Tetris UX)
+                    engine.rotate(clockwise: true)
+                    HapticService.shared.rotate()
                 }
             }
     }

@@ -49,6 +49,16 @@ final class HapticService {
         selection.selectionChanged()
     }
 
+    /// Piece rotated
+    func rotate() {
+        lightImpact.impactOccurred(intensity: 0.5)
+    }
+
+    /// Hard drop
+    func hardDrop() {
+        mediumImpact.impactOccurred(intensity: 0.9)
+    }
+
     /// Prepare generators ahead of a known event (reduces latency)
     func prepare() {
         lightImpact.prepare()
