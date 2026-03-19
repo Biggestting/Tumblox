@@ -1,21 +1,21 @@
 import SwiftUI
 
 struct ControlBar: View {
-    let onUndo: () -> Void
+    let onReturn: () -> Void
     let onHint: () -> Void
-    let onRotateLeft: () -> Void
-    let onRotateRight: () -> Void
+    let onZoomOut: () -> Void
+    let onZoomIn: () -> Void
     let onPause: () -> Void
 
     @Environment(\.colorScheme) var colorScheme
 
     var body: some View {
         HStack(spacing: 0) {
-            controlButton(icon: "arrow.uturn.backward", label: "Undo", action: onUndo)
-            controlButton(icon: "lightbulb",            label: "Hint", action: onHint)
-            controlButton(icon: "arrow.counterclockwise", label: "Rotate Left",  action: onRotateLeft)
-            controlButton(icon: "arrow.clockwise",      label: "Rotate Right", action: onRotateRight)
-            controlButton(icon: "pause.fill",           label: "Pause", action: onPause)
+            controlButton(icon: "arrow.uturn.backward", label: "Return",   action: onReturn)
+            controlButton(icon: "lightbulb",            label: "Hint",     action: onHint)
+            controlButton(icon: "minus.magnifyingglass", label: "Zoom Out", action: onZoomOut)
+            controlButton(icon: "plus.magnifyingglass",  label: "Zoom In",  action: onZoomIn)
+            controlButton(icon: "pause.fill",           label: "Pause",    action: onPause)
         }
         .frame(height: TumbloxSpacing.controlBarHeight)
         .background(TumbloxColors.controlBar(colorScheme))

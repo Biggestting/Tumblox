@@ -294,6 +294,30 @@ final class GameEngine: ObservableObject {
             score += scoreForClear(cleared)
             if cleared == 4 { tetrisCount += 1 }
             HapticService.shared.lineClear(count: cleared)
+
+            // Cascade gravity — drop floating blocks down
+            applyGravity()
+        }
+    }
+
+    /// Drops each block in every column down to fill gaps below it.
+    /// Runs column-by-column so floating blocks settle after line clears.
+    private func applyGravity() {
+        for col in 0..<Self.columns {
+            // Collect filled cells from bottom to top
+            var filled: [GridCell] = []
+            for row in (0..<Self.rows).reversed() {
+                if !grid[row][col].isEmpty {
+                    filled.append(grid[row][col])
+                    grid[row][col] = .empty
+                }
+            }
+            // Place them back starting from the bottom
+            var writeRow = Self.rows - 1
+            for cell in filled {
+                grid[writeRow][col] = cell
+                writeRow -= 1
+            }
         }
     }
 

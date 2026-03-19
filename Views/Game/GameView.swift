@@ -9,6 +9,11 @@ struct GameView: View {
     @StateObject private var engineHolder = EngineHolder()
     @State private var showLeaderboard = false
     @State private var leaderboardID: String? = nil
+    @State private var boardScale: CGFloat = 1.0
+
+    private let zoomStep: CGFloat = 0.15
+    private let minZoom: CGFloat = 0.6
+    private let maxZoom: CGFloat = 1.5
 
     // MARK: - Body
 
@@ -55,6 +60,8 @@ struct GameView: View {
                     nextPiece: config.modifiers.showNextPiece ? engine.nextPiece : nil,
                     showNextPiece: config.modifiers.showNextPiece
                 )
+                .scaleEffect(boardScale)
+                .animation(.easeInOut(duration: 0.15), value: boardScale)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 // Single unified gesture: DragGesture(minimumDistance:0) classifies
                 // tap vs swipe by total travel distance, eliminating the conflict
@@ -64,11 +71,11 @@ struct GameView: View {
                 .padding(.vertical, 8)
 
                 ControlBar(
-                    onUndo:        { engine.undo() },
-                    onHint:        { engine.showHint() },
-                    onRotateLeft:  { engine.rotate(clockwise: false) },
-                    onRotateRight: { engine.rotate(clockwise: true) },
-                    onPause:       { engine.pause() }
+                    onReturn:  { engine.undo() },
+                    onHint:    { engine.showHint() },
+                    onZoomOut: { boardScale = max(minZoom, boardScale - zoomStep) },
+                    onZoomIn:  { boardScale = min(maxZoom, boardScale + zoomStep) },
+                    onPause:   { engine.pause() }
                 )
             }
 
