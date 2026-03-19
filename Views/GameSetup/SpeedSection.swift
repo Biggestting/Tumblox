@@ -31,12 +31,18 @@ struct SpeedSection: View {
 
 // MARK: - Preview
 
-#Preview("Speed Section") {
-    @Previewable @State var speed: GameConfig.AutoFallSpeed = .classic
-    return ZStack {
-        Color.black.ignoresSafeArea()
-        SpeedSection(speed: $speed)
-            .padding()
+private struct SpeedSectionPreview: View {
+    @State private var speed: GameConfig.AutoFallSpeed = .classic
+    var body: some View {
+        ZStack {
+            Color.black.ignoresSafeArea()
+            SpeedSection(speed: $speed)
+                .padding()
+        }
+        .preferredColorScheme(.dark)
     }
-    .preferredColorScheme(.dark)
+}
+
+#Preview("Speed Section") {
+    SpeedSectionPreview()
 }

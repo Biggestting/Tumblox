@@ -31,12 +31,18 @@ struct SessionSection: View {
 
 // MARK: - Preview
 
-#Preview("Session Section") {
-    @Previewable @State var duration: GameConfig.SessionDuration = .minutes(5)
-    return ZStack {
-        Color.black.ignoresSafeArea()
-        SessionSection(duration: $duration)
-            .padding()
+private struct SessionSectionPreview: View {
+    @State private var duration: GameConfig.SessionDuration = .minutes(5)
+    var body: some View {
+        ZStack {
+            Color.black.ignoresSafeArea()
+            SessionSection(duration: $duration)
+                .padding()
+        }
+        .preferredColorScheme(.dark)
     }
-    .preferredColorScheme(.dark)
+}
+
+#Preview("Session Section") {
+    SessionSectionPreview()
 }

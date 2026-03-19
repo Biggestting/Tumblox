@@ -51,18 +51,24 @@ struct PaceSection: View {
 
 // MARK: - Preview
 
-#Preview("Pace Section") {
-    @Previewable @State var pace: GameConfig.Pace = .manualDrop
-    return ZStack {
-        Color.black.ignoresSafeArea()
-        VStack(alignment: .leading, spacing: 8) {
-            Text("PACE")
-                .font(.system(size: 11, weight: .semibold))
-                .kerning(2)
-                .foregroundColor(.gray)
-                .padding(.leading, 16)
-            PaceSection(pace: $pace)
+private struct PaceSectionPreview: View {
+    @State private var pace: GameConfig.Pace = .manualDrop
+    var body: some View {
+        ZStack {
+            Color.black.ignoresSafeArea()
+            VStack(alignment: .leading, spacing: 8) {
+                Text("PACE")
+                    .font(.system(size: 11, weight: .semibold))
+                    .kerning(2)
+                    .foregroundColor(.gray)
+                    .padding(.leading, 16)
+                PaceSection(pace: $pace)
+            }
         }
+        .preferredColorScheme(.dark)
     }
-    .preferredColorScheme(.dark)
+}
+
+#Preview("Pace Section") {
+    PaceSectionPreview()
 }
