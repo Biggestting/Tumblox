@@ -12,7 +12,18 @@ final class AppState: ObservableObject {
     let gameCenterService = GameCenterService()
 
     init() {
-        let progress = UserProgressService().load()
+        var progress = UserProgressService().load()
+
+        // One-time migration: force dark theme for users who had .system default
+        let migrationKey = "com.tumblox.darkThemeMigrationDone"
+        if !UserDefaults.standard.bool(forKey: migrationKey) {
+            if progress.settings.theme == .system {
+                progress.settings.theme = .dark
+            }
+            UserDefaults.standard.set(true, forKey: migrationKey)
+            UserProgressService().save(progress)
+        }
+
         self.userProgress = progress
         self.entitlementManager = EntitlementManager()
         Task { await entitlementManager.refreshEntitlements() }

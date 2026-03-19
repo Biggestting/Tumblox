@@ -43,6 +43,15 @@ struct GameCanvas: View {
             .frame(width: boardWidth, height: boardHeight)
             .background(colorScheme == .dark ? Color(hex: "#080808") : .boardSurface)
             .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
+            .overlay(
+                RoundedRectangle(cornerRadius: 8, style: .continuous)
+                    .strokeBorder(
+                        colorScheme == .dark
+                            ? Color(hex: "#2DD4BF").opacity(0.12)
+                            : Color(hex: "#000000").opacity(0.06),
+                        lineWidth: 1
+                    )
+            )
             .offset(x: offsetX, y: max(0, offsetY))
             .accessibilityElement(children: .ignore)
             .accessibilityLabel("Game board")

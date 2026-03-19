@@ -13,13 +13,19 @@ struct GameHUD: View {
     var body: some View {
         HStack(spacing: 0) {
             statCell(value: score.formatted(), label: "SCORE")
-            Divider().frame(height: 32).opacity(0.2)
+            Divider()
+                .frame(height: 32)
+                .opacity(colorScheme == .dark ? 0.15 : 0.12)
             statCell(value: personalBest.formatted(), label: "BEST")
-            Divider().frame(height: 32).opacity(0.2)
+            Divider()
+                .frame(height: 32)
+                .opacity(colorScheme == .dark ? 0.15 : 0.12)
             statCell(value: timeDisplay, label: "TIME")
 
             if let next = nextPiece {
-                Divider().frame(height: 32).opacity(0.2)
+                Divider()
+                    .frame(height: 32)
+                    .opacity(colorScheme == .dark ? 0.15 : 0.12)
                 NextPieceView(piece: next)
                     .padding(.horizontal, 12)
             }
@@ -31,17 +37,30 @@ struct GameHUD: View {
     private func statCell(value: String, label: String) -> some View {
         VStack(spacing: 2) {
             Text(value)
-                .font(TumbloxTypography.hudScore)
-                .foregroundColor(TumbloxColors.textPrimary(colorScheme))
-                .monospacedDigit()
+                .font(.system(size: 28, weight: .heavy, design: .rounded).monospacedDigit())
+                .foregroundColor(hudValueColor)
             Text(label)
-                .font(TumbloxTypography.hudLabel)
+                .font(.system(size: 10, weight: .semibold, design: .rounded))
                 .kerning(1.5)
-                .foregroundColor(TumbloxColors.textSecondary(colorScheme))
+                .foregroundColor(hudLabelColor)
         }
         .frame(maxWidth: .infinity)
         .accessibilityElement(children: .ignore)
         .accessibilityLabel("\(label): \(value)")
+    }
+
+    /// HUD value color — teal in dark mode, dark text in light mode
+    private var hudValueColor: Color {
+        colorScheme == .dark
+            ? Color(hex: "#2DD4BF")
+            : TumbloxColors.textPrimary(colorScheme)
+    }
+
+    /// HUD label color — teal dimmed in dark mode, secondary text in light mode
+    private var hudLabelColor: Color {
+        colorScheme == .dark
+            ? Color(hex: "#2DD4BF").opacity(0.7)
+            : TumbloxColors.textSecondary(colorScheme)
     }
 
     private var timeDisplay: String {
