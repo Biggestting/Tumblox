@@ -1,0 +1,36 @@
+# Xcode
+*.xcuserstate
+*.xcscmblueprint
+xcuserdata/
+*.xcworkspace/xcuserdata/
+DerivedData/
+*.moved-aside
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Build artifacts
+build/
+Products/
+
+# Package resolution
+.build/
+Packages/
+*.resolved
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+
+# Provisioning profiles (never commit)
+*.mobileprovision
+*.provisionprofile
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output

@@ -1,0 +1,30 @@
+{
+  "identifier" : "2B0D7CA3-4B6E-4E1A-9A1A-8F5C2D3E4F5A",
+  "nonConsumableProducts" : [
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "A1B2C3D4-E5F6-7890-ABCD-EF1234567890",
+      "localizations" : [
+        {
+          "description" : "Unlock all 10 Tumblox game modes with a single one-time purchase. No subscriptions, no ads.",
+          "displayName" : "Full Game",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.tumblox.fullgame",
+      "referenceName" : "Full Game Unlock",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+    "_failTransactionsEnabled" : false,
+    "_interruptedPurchasesEnabled" : false,
+    "_locale" : "en_US",
+    "_storefront" : "USA",
+    "_timeRate" : "Monthly renewal every thirty seconds"
+  },
+  "version" : {
+    "formatVersion" : "2"
+  }
+}
