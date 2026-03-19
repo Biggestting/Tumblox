@@ -50,18 +50,17 @@ struct GameSetupView: View {
                     SessionSection(duration: $config.sessionDuration)
                 }
 
-                // Modifiers
-                VStack(alignment: .leading, spacing: 8) {
-                    PreGameSectionLabel(text: "OPTIONS")
-                    ModifiersSection(modifiers: $config.modifiers)
-                }
-
                 // Play button
                 TumbloxPrimaryButton(title: "Play", showArrow: true) {
                     var finalConfig = config
                     if modeID == .challenge {
                         finalConfig.challengeLevel = appState.userProgress.challengeLevel
                     }
+                    // Apply user settings to config modifiers
+                    let settings = appState.userProgress.settings
+                    finalConfig.modifiers.ghostPieceEnabled = settings.ghostPieceEnabled
+                    finalConfig.modifiers.showNextPiece = settings.showNextPiece
+                    finalConfig.modifiers.hapticFeedback = settings.hapticsEnabled
                     appState.pendingGameConfig = finalConfig
                     if appState.hasSeenTutorial(for: modeID) {
                         appState.markModeAsPlayed(modeID)
