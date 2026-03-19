@@ -42,7 +42,11 @@ struct GameOverView: View {
                         Text("NEW BEST")
                             .font(TumbloxTypography.sectionEyebrow)
                             .kerning(2)
-                            .foregroundColor(TumbloxColors.accentBar)
+                            .foregroundStyle(
+                                colorScheme == .light
+                                    ? TumbloxGradient.accent
+                                    : LinearGradient(colors: [TumbloxColors.accentBar], startPoint: .leading, endPoint: .trailing)
+                            )
                     }
                     Text(score.formatted())
                         .font(.system(size: 52, weight: .heavy, design: .rounded))
@@ -75,7 +79,7 @@ struct GameOverView: View {
                                 Text("Leaderboard")
                                     .font(TumbloxTypography.body)
                             }
-                            .foregroundColor(TumbloxColors.accentBar)
+                            .foregroundColor(TumbloxColors.accent(colorScheme))
                         }
                         .accessibilityLabel("View Leaderboard")
                     }

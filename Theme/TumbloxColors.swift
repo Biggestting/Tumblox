@@ -3,12 +3,24 @@ import SwiftUI
 enum TumbloxColors {
     // MARK: - Raw tokens
 
-    static let accentBar      = Color(hex: "#F5A623")   // gold
+    static let accentBar      = Color(hex: "#F5A623")   // gold (dark mode accent)
     static let accentBarDim   = Color(hex: "#F5A62360")
     static let goldProgress   = Color(hex: "#F5A623")
     static let destructive    = Color(hex: "#FF3B30")
     static let fieldSurface   = Color(hex: "#111111")   // dark card surface
     static let fieldBorder    = Color(white: 1, opacity: 0.10)
+
+    // MARK: - Brand accent (adaptive)
+
+    /// Primary accent — purple in light, gold in dark
+    static func accent(_ scheme: ColorScheme) -> Color {
+        scheme == .dark ? accentBar : .primaryGradientStart
+    }
+
+    /// Toggle / switch tint — pink-coral in light, gold in dark
+    static func toggleTint(_ scheme: ColorScheme) -> Color {
+        scheme == .dark ? accentBar : .primaryGradientMid
+    }
 
     // MARK: - Adaptive helpers
 
@@ -33,7 +45,7 @@ enum TumbloxColors {
     }
 
     static func primaryCTA(_ scheme: ColorScheme) -> Color {
-        accentBar
+        scheme == .dark ? accentBar : .primaryGradientStart
     }
 
     static func divider(_ scheme: ColorScheme) -> Color {

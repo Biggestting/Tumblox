@@ -45,19 +45,19 @@ struct ChallengeSummaryView: View {
                         ZStack {
                             Circle()
                                 .fill(isSuccess
-                                    ? TumbloxColors.accentBar.opacity(0.15)
+                                    ? TumbloxColors.accent(colorScheme).opacity(0.15)
                                     : TumbloxColors.destructive.opacity(0.12))
                                 .frame(width: 72, height: 72)
                             Image(systemName: isSuccess ? "checkmark" : "xmark")
                                 .font(.system(size: 30, weight: .bold))
-                                .foregroundColor(isSuccess ? TumbloxColors.accentBar : TumbloxColors.destructive)
+                                .foregroundColor(isSuccess ? TumbloxColors.accent(colorScheme) : TumbloxColors.destructive)
                         }
 
                         Text(isSuccess ? "LEVEL COMPLETE" : "LEVEL FAILED")
                             .font(TumbloxTypography.sectionEyebrow)
                             .kerning(3)
                             .foregroundColor(isSuccess
-                                ? TumbloxColors.accentBar
+                                ? TumbloxColors.accent(colorScheme)
                                 : TumbloxColors.destructive)
                     }
 

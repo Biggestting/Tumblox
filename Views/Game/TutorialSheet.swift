@@ -134,7 +134,7 @@ struct TutorialSheet: View {
             HStack(spacing: 6) {
                 ForEach(0..<pages.count, id: \.self) { i in
                     Circle()
-                        .fill(i == pageIndex ? TumbloxColors.accentBar : TumbloxColors.textMuted(colorScheme))
+                        .fill(i == pageIndex ? TumbloxColors.accent(colorScheme) : TumbloxColors.textMuted(colorScheme))
                         .frame(width: i == pageIndex ? 8 : 6, height: i == pageIndex ? 8 : 6)
                         .animation(.spring(response: 0.3), value: pageIndex)
                 }
@@ -163,7 +163,7 @@ struct TutorialSheet: View {
         VStack(spacing: 20) {
             Image(systemName: page.icon)
                 .font(.system(size: 44, weight: .light))
-                .foregroundColor(TumbloxColors.accentBar)
+                .foregroundColor(TumbloxColors.accent(colorScheme))
                 .frame(height: 56)
 
             VStack(spacing: 8) {

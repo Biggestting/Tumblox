@@ -109,7 +109,7 @@ private struct BackButton: View {
                 Text("Back")
                     .font(TumbloxTypography.body)
             }
-            .foregroundColor(TumbloxColors.textSecondary(colorScheme))
+            .foregroundColor(TumbloxColors.accent(colorScheme))
         }
     }
 }

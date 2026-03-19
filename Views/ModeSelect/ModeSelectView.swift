@@ -26,7 +26,7 @@ struct ModeSelectView: View {
         HStack {
             Text("Tumblox")
                 .font(TumbloxTypography.wordmark)
-                .foregroundColor(TumbloxColors.textPrimary(colorScheme))
+                .foregroundStyle(TumbloxGradient.primary)
             Spacer()
             Button {
                 appState.navigate(to: .settings)
@@ -91,7 +91,7 @@ struct ModeSelectView: View {
             Text("FULL GAME")
                 .font(TumbloxTypography.sectionEyebrow)
                 .kerning(2.5)
-                .foregroundColor(TumbloxColors.textMuted(colorScheme))
+                .foregroundColor(TumbloxColors.textSecondary(colorScheme))
                 .padding(.horizontal, TumbloxSpacing.screenHorizontal)
 
             VStack(spacing: 0) {

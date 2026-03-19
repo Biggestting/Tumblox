@@ -107,10 +107,10 @@ struct GameCanvas: View {
     private func hintTile(col: Int, row: Int, tileSize: CGFloat) -> some View {
         let inset: CGFloat = 1.5
         return RoundedRectangle(cornerRadius: borderRadius, style: .continuous)
-            .fill(TumbloxColors.accentBar.opacity(0.25))
+            .fill(Color.primaryGradientMid.opacity(0.20))
             .overlay(
                 RoundedRectangle(cornerRadius: borderRadius, style: .continuous)
-                    .strokeBorder(TumbloxColors.accentBar.opacity(0.7), lineWidth: 1.5)
+                    .strokeBorder(Color.primaryGradientMid.opacity(0.55), lineWidth: 1.5)
             )
             .frame(width: tileSize - inset * 2, height: tileSize - inset * 2)
             .position(

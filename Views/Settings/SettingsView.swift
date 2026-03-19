@@ -86,7 +86,7 @@ struct SettingsView: View {
                         Text("Back")
                             .font(TumbloxTypography.body)
                     }
-                    .foregroundColor(TumbloxColors.textSecondary(colorScheme))
+                    .foregroundColor(TumbloxColors.accent(colorScheme))
                 }
             }
         }
@@ -106,7 +106,7 @@ struct SettingsView: View {
             Text(title)
                 .font(TumbloxTypography.sectionEyebrow)
                 .kerning(2.5)
-                .foregroundColor(TumbloxColors.textMuted(colorScheme))
+                .foregroundColor(TumbloxColors.textSecondary(colorScheme))
                 .padding(.horizontal, TumbloxSpacing.screenHorizontal)
 
             content()
@@ -151,7 +151,7 @@ struct SettingsView: View {
                 .foregroundColor(TumbloxColors.textPrimary(colorScheme))
             Spacer()
             Toggle("", isOn: isOn)
-                .tint(TumbloxColors.accentBar)
+                .tint(TumbloxColors.toggleTint(colorScheme))
                 .labelsHidden()
         }
         .padding(.horizontal, TumbloxSpacing.screenHorizontal)
@@ -166,7 +166,11 @@ struct SettingsView: View {
                 VStack(alignment: .leading, spacing: 2) {
                     Text("Unlock Full Game")
                         .font(TumbloxTypography.bodyBold)
-                        .foregroundColor(TumbloxColors.accentBar)
+                        .foregroundStyle(
+                            colorScheme == .light
+                                ? TumbloxGradient.accent
+                                : LinearGradient(colors: [TumbloxColors.accentBar], startPoint: .leading, endPoint: .trailing)
+                        )
                     Text("Unlock all 10 game modes")
                         .font(TumbloxTypography.caption)
                         .foregroundColor(TumbloxColors.textSecondary(colorScheme))

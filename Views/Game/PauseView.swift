@@ -36,7 +36,11 @@ struct PauseView: View {
                 VStack(spacing: 4) {
                     Text(score.formatted())
                         .font(TumbloxTypography.hudScore)
-                        .foregroundColor(TumbloxColors.accentBar)
+                        .foregroundStyle(
+                            colorScheme == .light
+                                ? TumbloxGradient.accent
+                                : LinearGradient(colors: [TumbloxColors.accentBar], startPoint: .leading, endPoint: .trailing)
+                        )
                         .monospacedDigit()
                     Text("CURRENT SCORE")
                         .font(TumbloxTypography.hudLabel)
@@ -61,7 +65,7 @@ struct PauseView: View {
 
 // MARK: - Preview
 
-#Preview("Pause View") {
+#Preview("Pause – Dark") {
     PreviewHost {
         PauseView(
             modeName: "Zen Stacking",
@@ -71,4 +75,16 @@ struct PauseView: View {
         )
     }
     .preferredColorScheme(.dark)
+}
+
+#Preview("Pause – Light") {
+    PreviewHost {
+        PauseView(
+            modeName: "Zen Stacking",
+            score: 14_280,
+            onResume: {},
+            onQuit: {}
+        )
+    }
+    .preferredColorScheme(.light)
 }

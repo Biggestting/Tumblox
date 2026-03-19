@@ -39,11 +39,15 @@ struct PaywallView: View {
                 VStack(spacing: 12) {
                     Text("Tumblox")
                         .font(TumbloxTypography.wordmark)
-                        .foregroundColor(TumbloxColors.textPrimary(colorScheme))
+                        .foregroundStyle(TumbloxGradient.primary)
 
                     Text("Full Game")
                         .font(.system(size: 34, weight: .heavy, design: .rounded))
-                        .foregroundColor(TumbloxColors.accentBar)
+                        .foregroundStyle(
+                            colorScheme == .light
+                                ? TumbloxGradient.accent
+                                : LinearGradient(colors: [TumbloxColors.accentBar], startPoint: .leading, endPoint: .trailing)
+                        )
 
                     Text("Unlock every mode with one purchase.\nNo subscriptions. No ads. Ever.")
                         .font(TumbloxTypography.body)
@@ -98,7 +102,7 @@ struct PaywallView: View {
         HStack(spacing: 14) {
             Image(systemName: "checkmark.circle.fill")
                 .font(.system(size: 18))
-                .foregroundColor(TumbloxColors.accentBar)
+                .foregroundColor(TumbloxColors.accent(colorScheme))
             VStack(alignment: .leading, spacing: 2) {
                 Text(mode.name)
                     .font(TumbloxTypography.bodyBold)
@@ -138,8 +142,13 @@ struct PaywallView: View {
             .foregroundColor(.white)
             .frame(maxWidth: .infinity)
             .frame(height: 54)
-            .background(TumbloxColors.accentBar)
+            .background(TumbloxGradient.primary)
             .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
+            .shadow(
+                color: DS.ctaShadowColor,
+                radius: DS.ctaShadowRadius,
+                y: DS.ctaShadowY
+            )
         }
         .disabled(isPurchasing || isRestoring)
     }

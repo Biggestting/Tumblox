@@ -12,10 +12,15 @@ struct ModeRow: View {
     var body: some View {
         Button(action: onTap) {
             HStack(spacing: 0) {
-                // Left accent bar (active indicator)
-                Rectangle()
-                    .fill(isActive ? TumbloxColors.accentBar : Color.clear)
-                    .frame(width: TumbloxSpacing.accentBarWidth)
+                // Left accent bar — gradient in light, gold in dark
+                if isActive {
+                    RoundedRectangle(cornerRadius: 1.5)
+                        .fill(TumbloxGradient.primary)
+                        .frame(width: TumbloxSpacing.accentBarWidth)
+                } else {
+                    Color.clear
+                        .frame(width: TumbloxSpacing.accentBarWidth)
+                }
 
                 HStack {
                     VStack(alignment: .leading, spacing: 3) {
@@ -41,7 +46,11 @@ struct ModeRow: View {
                         VStack(alignment: .trailing, spacing: 1) {
                             Text(best.formatted())
                                 .font(TumbloxTypography.modeScore)
-                                .foregroundColor(TumbloxColors.accentBar)
+                                .foregroundStyle(
+                                    colorScheme == .light
+                                        ? TumbloxGradient.accent
+                                        : LinearGradient(colors: [TumbloxColors.accentBar], startPoint: .leading, endPoint: .trailing)
+                                )
                             Text("BEST")
                                 .font(.system(size: 9, weight: .bold, design: .rounded))
                                 .kerning(1)
@@ -58,7 +67,7 @@ struct ModeRow: View {
         .buttonStyle(.plain)
         .accessibilityLabel(accessibilityDescription)
         .accessibilityHint(isLocked ? "Locked. Double tap to unlock." : "Double tap to set up and play.")
-        .accessibilityAddTraits(isLocked ? .isButton : .isButton)
+        .accessibilityAddTraits(.isButton)
     }
 
     private var accessibilityDescription: String {
@@ -71,7 +80,7 @@ struct ModeRow: View {
 
 // MARK: - Preview
 
-#Preview("Mode Rows") {
+#Preview("Mode Rows – Dark") {
     let zenMode       = GameMode.mode(for: .zenStacking)
     let precisionMode = GameMode.mode(for: .precision)
     let blitzMode     = GameMode.mode(for: .blitz)
@@ -87,7 +96,29 @@ struct ModeRow: View {
         }
         .background(Color(hex: "#111111"))
         .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
-        .padding()
+        .padding(16)
     }
     .preferredColorScheme(.dark)
+}
+
+#Preview("Mode Rows – Light") {
+    let zenMode       = GameMode.mode(for: .zenStacking)
+    let precisionMode = GameMode.mode(for: .precision)
+    let blitzMode     = GameMode.mode(for: .blitz)
+
+    return ZStack {
+        Color.backgroundPrimary.ignoresSafeArea()
+        VStack(spacing: 0) {
+            ModeRow(mode: zenMode,       isActive: true,  isLocked: false, personalBest: 18_420) {}
+            Divider()
+            ModeRow(mode: precisionMode, isActive: false, isLocked: false, personalBest: nil)    {}
+            Divider()
+            ModeRow(mode: blitzMode,     isActive: false, isLocked: true,  personalBest: nil)    {}
+        }
+        .background(Color.cardBackground)
+        .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
+        .shadow(color: DS.shadowColor, radius: DS.shadowRadius, y: DS.shadowY)
+        .padding(16)
+    }
+    .preferredColorScheme(.light)
 }

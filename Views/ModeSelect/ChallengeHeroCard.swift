@@ -13,11 +13,15 @@ struct ChallengeHeroCard: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            // Eyebrow
+            // Eyebrow — gradient in light, gold in dark
             Text("CHALLENGE MODE")
                 .font(TumbloxTypography.sectionEyebrow)
                 .kerning(2.5)
-                .foregroundColor(TumbloxColors.accentBar)
+                .foregroundStyle(
+                    colorScheme == .light
+                        ? TumbloxGradient.accent
+                        : LinearGradient(colors: [TumbloxColors.accentBar], startPoint: .leading, endPoint: .trailing)
+                )
 
             // Giant level numeral
             HStack(alignment: .lastTextBaseline, spacing: 4) {
@@ -32,15 +36,15 @@ struct ChallengeHeroCard: View {
             // Progress bar
             GeometryReader { geo in
                 ZStack(alignment: .leading) {
-                    RoundedRectangle(cornerRadius: 2)
+                    RoundedRectangle(cornerRadius: 3)
                         .fill(TumbloxColors.divider(colorScheme))
-                        .frame(height: 4)
-                    RoundedRectangle(cornerRadius: 2)
+                        .frame(height: 5)
+                    RoundedRectangle(cornerRadius: 3)
                         .fill(TumbloxGradient.primary)
-                        .frame(width: geo.size.width * progress, height: 4)
+                        .frame(width: geo.size.width * progress, height: 5)
                 }
             }
-            .frame(height: 4)
+            .frame(height: 5)
 
             // Objective
             if let challenge = currentChallenge {
@@ -49,13 +53,28 @@ struct ChallengeHeroCard: View {
                     .foregroundColor(TumbloxColors.textSecondary(colorScheme))
             }
         }
-        .padding(TumbloxSpacing.cardPadding)
-        .background(TumbloxColors.card(colorScheme))
+        .padding(20)
+        .background(
+            ZStack {
+                TumbloxColors.card(colorScheme)
+                if colorScheme == .light {
+                    TumbloxGradient.primary.opacity(0.04)
+                }
+            }
+        )
         .clipShape(RoundedRectangle(cornerRadius: TumbloxSpacing.heroRadius, style: .continuous))
+        .overlay(
+            RoundedRectangle(cornerRadius: TumbloxSpacing.heroRadius, style: .continuous)
+                .strokeBorder(
+                    TumbloxGradient.primary,
+                    lineWidth: colorScheme == .light ? 1.5 : 0
+                )
+                .opacity(colorScheme == .light ? 0.18 : 0)
+        )
         .shadow(
-            color: colorScheme == .light ? DS.shadowColor : .clear,
-            radius: DS.shadowRadius,
-            y: DS.shadowY
+            color: colorScheme == .light ? Color.primaryGradientStart.opacity(0.08) : .clear,
+            radius: 12,
+            y: 4
         )
         .padding(.horizontal, TumbloxSpacing.screenHorizontal)
     }
@@ -63,11 +82,20 @@ struct ChallengeHeroCard: View {
 
 // MARK: - Preview
 
-#Preview("Challenge Hero Card") {
+#Preview("Challenge – Dark") {
     ZStack {
         Color.black.ignoresSafeArea()
         ChallengeHeroCard(currentLevel: 7, totalLevels: 31, progress: 0.22)
             .padding(.vertical, 24)
     }
     .preferredColorScheme(.dark)
+}
+
+#Preview("Challenge – Light") {
+    ZStack {
+        Color.backgroundPrimary.ignoresSafeArea()
+        ChallengeHeroCard(currentLevel: 7, totalLevels: 31, progress: 0.22)
+            .padding(.vertical, 24)
+    }
+    .preferredColorScheme(.light)
 }

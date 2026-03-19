@@ -41,7 +41,7 @@ private struct ModifierRow: View {
             }
             Spacer()
             Toggle("", isOn: $isOn)
-                .tint(TumbloxColors.accentBar)
+                .tint(TumbloxColors.toggleTint(colorScheme))
                 .labelsHidden()
         }
         .padding(.horizontal, TumbloxSpacing.screenHorizontal)

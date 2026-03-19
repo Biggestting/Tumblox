@@ -19,7 +19,7 @@ struct StripOption: View {
                 .overlay(alignment: .bottom) {
                     if isSelected {
                         Rectangle()
-                            .fill(TumbloxColors.accentBar)
+                            .fill(TumbloxGradient.accent)
                             .frame(height: 2)
                             .offset(y: 1)
                     }
