@@ -10,6 +10,7 @@ struct GameView: View {
     @State private var showLeaderboard = false
     @State private var leaderboardID: String? = nil
     @State private var boardScale: CGFloat = 1.0
+    @State private var tiltAngle: Angle = .zero
 
     private let zoomStep: CGFloat = 0.15
     private let minZoom: CGFloat = 0.6
@@ -61,7 +62,9 @@ struct GameView: View {
                     showNextPiece: config.modifiers.showNextPiece
                 )
                 .scaleEffect(boardScale)
+                .rotationEffect(tiltAngle, anchor: .bottom)
                 .animation(.easeInOut(duration: 0.15), value: boardScale)
+                .animation(.easeInOut(duration: 0.3), value: tiltAngle)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 // Single unified gesture: DragGesture(minimumDistance:0) classifies
                 // tap vs swipe by total travel distance, eliminating the conflict
@@ -149,6 +152,13 @@ struct GameView: View {
         .onChange(of: engine.phase) { phase in
             if phase == .gameOver || phase == .sessionComplete {
                 appState.updatePersonalBest(engine.score, for: config.modeID, elapsedSeconds: engine.elapsedSeconds)
+            }
+        }
+        .onChange(of: engine.tiltDirection) { direction in
+            switch direction {
+            case -1: tiltAngle = .degrees(-2.5)
+            case  1: tiltAngle = .degrees(2.5)
+            default: tiltAngle = .degrees(0)
             }
         }
         .sheet(isPresented: $showLeaderboard) {

@@ -42,6 +42,7 @@ final class GameEngine: ObservableObject {
     @Published private(set) var elapsedSeconds: Int = 0
     @Published private(set) var hintPlacement: HintPlacement? = nil
     @Published private(set) var challengeResult: ChallengeResult = .incomplete
+    @Published private(set) var tiltDirection: Int = 0  // -1 left, 0 center, +1 right
 
     // MARK: - Private
 
@@ -269,6 +270,18 @@ final class GameEngine: ObservableObject {
         // Pyramid check (post-clear)
         if ChallengeEvaluator.detectPyramid(in: grid) { pyramidBuilt = true }
 
+        // Tilt gravity — shift topmost row based on piece landing side
+        let centerOfMass = Double(piece.cells.map { $0.col }.reduce(0, +)) / Double(piece.cells.count)
+        let boardCenter = Double(Self.columns - 1) / 2.0  // 4.5
+        if centerOfMass < boardCenter - 0.5 {
+            tiltDirection = -1
+        } else if centerOfMass > boardCenter + 0.5 {
+            tiltDirection = 1
+        } else {
+            tiltDirection = 0
+        }
+        applyTilt()
+
         evaluateChallenge()
         spawnPiece()
     }
@@ -319,6 +332,29 @@ final class GameEngine: ObservableObject {
                 writeRow -= 1
             }
         }
+    }
+
+    /// Shifts all blocks in the topmost occupied row by `tiltDirection` columns.
+    /// Blocks pushed off-edge are destroyed; gravity resettles any floaters.
+    private func applyTilt() {
+        guard tiltDirection != 0 else { return }
+
+        // Find topmost occupied row
+        guard let topRow = (0..<Self.rows).first(where: { row in
+            grid[row].contains(where: { !$0.isEmpty })
+        }) else { return }
+
+        var newRow = Array(repeating: GridCell.empty, count: Self.columns)
+        for col in 0..<Self.columns {
+            let destCol = col + tiltDirection
+            if destCol >= 0, destCol < Self.columns {
+                newRow[destCol] = grid[topRow][col]
+            }
+            // else: block falls off edge — destroyed
+        }
+        grid[topRow] = newRow
+        applyGravity()
+        HapticService.shared.tilt()
     }
 
     private func scoreForClear(_ count: Int) -> Int {

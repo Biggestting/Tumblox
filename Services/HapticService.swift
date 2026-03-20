@@ -54,6 +54,11 @@ final class HapticService {
         lightImpact.impactOccurred(intensity: 0.5)
     }
 
+    /// Board tilt after piece lock
+    func tilt() {
+        lightImpact.impactOccurred(intensity: 0.4)
+    }
+
     /// Hard drop
     func hardDrop() {
         mediumImpact.impactOccurred(intensity: 0.9)
